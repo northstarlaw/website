@@ -1,6 +1,11 @@
 .idea/
 .git/
+data/
+
 prototype/node_modules
+docs/_site
+docs/.sass-cache
+docs/.jekyll-metadata
 
 themes/index.php
 themes/twentyfifteen/
