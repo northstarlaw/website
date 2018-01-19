@@ -1,3 +1,7 @@
-body {
-  background: red;
+abbr[title] {
+  text-decoration: none;
+
+  &:hover {
+    cursor: text;
+  }
 }

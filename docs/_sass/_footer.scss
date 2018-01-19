@@ -1,0 +1,12 @@
+.footer {
+  background: color("light-grey");
+  padding-top: ($spacer / 2);
+  padding-bottom: ($spacer /2);
+}
+
+.footer-legal {
+  background: theme-color("primary");
+  color: color("light-grey");
+  padding-top: ($spacer / 2);
+  padding-bottom: ($spacer /2);
+}

@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 
-gulp.task('default', function(done) {
+gulp.task('default', ['sass'], function(done) {
   browserSync.init({
     server: {
       baseDir: "./"
@@ -10,9 +10,9 @@ gulp.task('default', function(done) {
   });
   
   gulp.watch("./sass/main.scss", ["sass"]);
-  
+
   done();
-})
+});
 
 
 gulp.task("sass", function() {
@@ -21,6 +21,5 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("./assets/css"))
     .pipe(browserSync.stream());
 });
-
 
 

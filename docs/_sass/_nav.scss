@@ -1,0 +1,11 @@
+.nav-link {
+  border-bottom: 1px solid transparent;
+
+  @include hover-focus {
+    border-bottom-color: theme-color("blue");
+  }
+}
+
+.nav {
+  align-self: flex-end;
+}
