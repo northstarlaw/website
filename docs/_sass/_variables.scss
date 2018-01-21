@@ -1,0 +1,28 @@
+// Colors
+$grey: #585858;
+$blue: #417fc0;
+
+$theme-colors: (
+  "primary": $grey,
+  "secondary": $blue
+);
+
+$colors: (
+  "light-grey": #e6e6e6
+);
+
+// Links
+$link-hover-decoration: none;
+
+// Navbar
+$navbar-padding-x: 0;
+
+// Paragraph
+$paragraph-margin-bottom: 2rem;
+
+// Fonts
+$font-family-base: Georgia, Times, "Times New Roman", serif;
+$h2-font-size: 1.5rem;
+$headings-margin-bottom: 1rem;
+$body-color: $grey;
+
