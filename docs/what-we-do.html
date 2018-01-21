@@ -1,0 +1,21 @@
+---
+title: North Star Law
+layout: default
+pageHeader: What We Do
+---
+
+<ul class="list-unstyled row department-list">
+  {% for department in site.data.departments %}
+    <li class="col-4 department-list__department">
+        <a href="#" class="card">
+          <img class="card-img-top" src="{{ department.image['url'] }}" alt="{{ department.image.alt }}">
+          <div class="card-body">
+            <h2 class="card-title">{{ department.title }}</h2>
+            <div class="card-description">
+              {{ department.description | truncate: 150 }}
+            </div>
+          </div>
+        </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,8 +1,8 @@
 .nav-link {
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
 
   @include hover-focus {
-    border-bottom-color: theme-color("blue");
+    border-bottom-color: theme-color("secondary");
   }
 }
 

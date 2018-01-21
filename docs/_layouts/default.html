@@ -9,9 +9,15 @@
     {% include header.html %}
 
     <div class="container">
+      {% if page.pageHeader %}
+        <h1 class="text-center">{{page.pageHeader}}</h1>
+      {% endif %}
+
       {{ content }}
     </div>
 
     {% include footer.html %}
+
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,7 @@
+.card {
+  &-body {
+    p {
+      @extend .card-text;
+    }
+  }
+}

@@ -11,6 +11,9 @@ $colors: (
   "light-grey": #e6e6e6
 );
 
+// Spacing
+$spacer: 1rem;
+
 // Links
 $link-hover-decoration: none;
 
@@ -18,11 +21,11 @@ $link-hover-decoration: none;
 $navbar-padding-x: 0;
 
 // Paragraph
-$paragraph-margin-bottom: 2rem;
+$paragraph-margin-bottom: $spacer * 2;
 
 // Fonts
 $font-family-base: Georgia, Times, "Times New Roman", serif;
-$h2-font-size: 1.5rem;
-$headings-margin-bottom: 1rem;
+$h2-font-size: $spacer * 1.5;
+$headings-margin-bottom: $spacer;
 $body-color: $grey;
 

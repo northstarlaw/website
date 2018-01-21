@@ -1,0 +1,23 @@
+.tabs {
+  &__link {
+    padding-top: (1rem/2);
+    margin-bottom: (1rem/2);
+    display: inline-block;
+
+    border-bottom: 2px solid transparent;
+
+    @include hover-focus {
+      border-bottom-color: theme-color("secondary");
+    }
+
+    &--active {
+      border-bottom-color: theme-color("secondary");
+    }
+  }
+
+  &__item {
+    &--hidden {
+      display: none;
+    }
+  }
+}

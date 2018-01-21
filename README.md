@@ -2,7 +2,7 @@
 
 ## To Run Prototype
 
-The prototype is in the `/docs` folder.
+The prototype is in the `/docs` folder. It uses [Jekyll](https://jekyllrb.com/docs/home).
 
 - [First time install](#install-ruby)
 - [Run the project](#serve-the-project)
