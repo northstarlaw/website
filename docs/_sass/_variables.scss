@@ -1,7 +1,10 @@
 // Colors
+$grey: #585858;
+$blue: #417fc0;
+
 $theme-colors: (
-  "primary": #585858,
-  "secondary": #417fc0
+  "primary": $grey,
+  "secondary": $blue
 );
 
 $colors: (
@@ -20,3 +23,6 @@ $paragraph-margin-bottom: 2rem;
 // Fonts
 $font-family-base: Georgia, Times, "Times New Roman", serif;
 $h2-font-size: 1.5rem;
+$headings-margin-bottom: 1rem;
+$body-color: $grey;
+
