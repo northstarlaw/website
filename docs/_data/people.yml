@@ -1,62 +1,106 @@
 - name: Benedikte Mailing Bach
   position: Directior
-  email: bm@northstarlaw.co.uk
+  description: <p>Benedikte's core practice is based on advising non-domiliciaries in the UK. Understanding that the personal interests of the client are often intertwined with the business projects that they are involved in, Benedikte combines  private client/tax advice, cross-border specialization and property law. She works closely with her clients of to ensure that their interests are fully considered and looked after.</p>
+               <p>She was recommended by Spear's 500 in 2016 who described her as the "the dynamic Cambridge-educated Dane" who is a "trusted advisor to HNWs and their companies, as well as actors, models, musicians and sport stars". She has been rated in Chambers Global in 2014, 2015 and 2016.</p>
+               <p>Benedikte is Danish and speaks fluent Danish and English. Her international experience started while working for two large City law practices in London and New York. She is qualified to practice in both jurisdictions.</p>
+  contact:
+    telephone: 020
+    fax: 030
+    email: bm@northstarlaw.co.uk
+  qualifications:
+    - Admitted to the New York Bar 2006
+    - Solicitor (England & Wales) 2004
+    - Oxford Institute of Legal Practice (LPC) 2002
+    - University of Cambridge (M.Phil) 2000
+    - University of Cambridge (MA Hons) 1999
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Alexander Blain
   position: Paralegal
-  email: alex.blain@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: alex.blain@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Zoe Bloom
   position: Solicitor
-  email: zb@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: zb@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Mark Sullivan
   position: Senior Dispute Resolution Solicitor
-  email: mark.sullivan@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: mark.sullivan@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: John Fox
   position: Solicitor
-  email: john.fox@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: john.fox@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Sarah Noake
   position: Private Client Lawyer
-  email: sarah.noake@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: sarah.noake@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Victoria Fletcher
   position: Residential Development
-  email: victoria.fletcher@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: victoria.fletcher@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Helen Smith
   position: Immigration Lawyer
-  email: helen.smith@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: helen.smith@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:
 
 - name: Lesley Kemp
   position: Immigration Solicitor
-  email: lesley.kemp@northstarlaw.co.uk
+  contact:
+    telephone: 020
+    fax: 030
+    email: lesley.kemp@northstarlaw.co.uk
+  qualifications:
   image:
     url: http://via.placeholder.com/140x140
     alt:

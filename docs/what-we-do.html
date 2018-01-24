@@ -7,7 +7,7 @@ pageHeader: What We Do
 <ul class="list-unstyled row department-list">
   {% for department in site.data.departments %}
     <li class="col-4 department-list__department">
-        <a href="{{site.url}}/website/what-we-do/department#{{department.title | slugify}}" class="card">
+        <a href="{{site.baseurl}}/what-we-do/department#{{department.title | slugify}}" class="card">
           <img class="card-img-top" src="{{ department.image.url }}" alt="{{ department.image.alt }}">
           <div class="card-body">
             <h2 class="card-title">{{ department.title }}</h2>
