@@ -1,0 +1,62 @@
+- name: Benedikte Mailing Bach
+  position: Directior
+  email: bm@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Alexander Blain
+  position: Paralegal
+  email: alex.blain@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Zoe Bloom
+  position: Solicitor
+  email: zb@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Mark Sullivan
+  position: Senior Dispute Resolution Solicitor
+  email: mark.sullivan@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: John Fox
+  position: Solicitor
+  email: john.fox@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Sarah Noake
+  position: Private Client Lawyer
+  email: sarah.noake@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Victoria Fletcher
+  position: Residential Development
+  email: victoria.fletcher@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Helen Smith
+  position: Immigration Lawyer
+  email: helen.smith@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:
+
+- name: Lesley Kemp
+  position: Immigration Solicitor
+  email: lesley.kemp@northstarlaw.co.uk
+  image:
+    url: http://via.placeholder.com/140x140
+    alt:

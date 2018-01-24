@@ -1,0 +1,10 @@
+.team-list {
+  &__title,
+  &__position {
+    font-size: $spacer;
+  }
+
+  &__content {
+    word-break: break-all;
+  }
+}

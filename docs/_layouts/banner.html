@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>{{page.title}}</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="{{site.url}}/website/assets/css/main.css">
 </head>
 <body>
+
 {% include header.html %}
 
 <div class="banner" style="background-image: url({{page.bannerImg}})">
@@ -20,6 +21,6 @@
 
 {% include footer.html %}
 
-<script src="/assets/js/main.js"></script>
+<script src="{{site.url}}/website/assets/js/main.js"></script>
 </body>
 </html>

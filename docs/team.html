@@ -1,0 +1,20 @@
+---
+title: The Team - North Star Law
+layout: default
+pageHeader: The Team
+---
+
+<ul class="list-unstyled row team-list">
+  {% for member in site.data.people %}
+  <li class="col-lg-4 col-md-6 mb-4">
+    <a class="media" href="team/{{ member.name | slugify }}">
+      <img class="mr-3 align-self-center rounded" src="{{ member.image['url'] }}" alt="">
+      <div class="media-body team-list__content">
+        <h2 class="mt-0 team-list__title">{{ member.name }}</h2>
+        <h3 class="team-list__position"> {{ member.position }}</h3>
+        {{ member.email }}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
