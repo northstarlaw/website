@@ -7,7 +7,7 @@ pageHeader: The Team
 <ul class="list-unstyled row team-list">
   {% for member in site.data.people %}
   <li class="col-lg-4 col-md-6 mb-4">
-    <a class="media" href="{{ member.name | slugify }}">
+    <a class="media" href="{{site.baseurl}}/team/{{ member.name | slugify }}">
       <img class="mr-3 align-self-center rounded" src="{{ member.image['url'] }}" alt="">
       <div class="media-body team-list__content">
         <h2 class="mt-0 team-list__title">{{ member.name }}</h2>
