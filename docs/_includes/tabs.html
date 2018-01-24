@@ -1,57 +1,60 @@
 <div class="row">
-  <div class="col-9">
-    <h2>Our Departments</h2>
+  <div class="col-9 h2">
+    Our Departments
   </div>
-  <div class="col-3">
-    <h2>Key Contact</h2>
+  <div class="col-3 h2">
+    <span class="d-none d-sm-block">Key Contact</span>
   </div>
 </div>
 <div class="tabs row">
-  <div class="col-2">
-    <ul class="tabs__links list-unstyled">
-      <li><a class="tabs__link" href="#wills-and-probate">Wills and Probate</a></li>
-      <li><a class="tabs__link" href="#tax">Tax</a></li>
-      <li><a class="tabs__link" href="#immigration">Immigration</a></li>
-    </ul>
+  <div class="col-md-2">
+    <aside>
+      <h1 class="sr-only">Our Departments</h1>
+      <ul class="tabs__links list-unstyled">
+        {% for department in site.data.departments %}
+        <li role="tab" aria-controls="{{ department.title | slugify }}">
+          <a class="tabs__link"
+             href="#{{ department.title | slugify }}"
+             data-img="{{ department.image.url }}"
+             data-text="{{ department.title }}"
+             title="Active tab"
+             id="{{department.title | slugify}}-tab"
+          >
+            {{department.title}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
   </div>
-  <div class="col-10">
-    <div id="wills-and-probate" class="tabs__item row">
-      <div class="col-8">
-        <p>
-          One of North Star Law's main focus is looking after non-domiciliaries in the UK.
-          Whether the client is a high net-worth individual,
-          entrepreneur or just a young person venturing abroad in the hope of realising their dreams we can help.
-          We help clients move to the UK, while they are in the UK and help them with their departure from the UK.
-          North Star Law’s interest in each client means we are on call to "hold the client’s hand".
-        </p>
-      </div>
-      <div class="col-4">
-      </div>
-    </div>
-    <div id="tax" class="tabs__item row">
-      <div class="col-8">
-        <p>
-          North Star Law regularly acts on prestigious commercial and high value residential property transactions.
-          The team prides itself on the quality not the quantity of their work.
-        </p>
-        <p>
-          We aim to make the process as easy and uncomplicated for the client as possible. We assist you at every stage of
-          the process from negotiation to handover of the keys – and beyond if requested.
-        </p>
-      </div>
-      <div class="col-4">
-      </div>
-    </div>
-    <div id="immigration" class="tabs__item row">
-      <div class="col-8">
-        <p>
-          Our immigration team help individuals and businesses from all round the world to gain the correct permissions
-          to come to or remain in the UK. We provide strategic immigration advice at every step of the journey in order
-          to help our clients achieve their long-term goals in the UK.
-        </p>
-      </div>
-      <div class="col-4">
-      </div>
-    </div>
+  <div class="col-md-10">
+    {% for department in site.data.departments %}
+      <section id="{{department.title | slugify}}" class="tabs__item row" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
+        <div class="col-md-8">
+          <h1 class="sr-only">{{ department.title }}</h1>
+          {{department.description}}
+        </div>
+        <div class="col-md-4">
+          {% if department.contacts %}
+            <h2 class="d-block d-sm-none">Key Contacts</h2>
+            {% for contact in department.contacts %}
+              {% assign person = site.data.people[contact.name] %}
+              <div class="media mb-4">
+                <img class="mr-3" src="{{ person.image.url }}" alt="">
+                <div class="media-body">
+                  <h3 class="mt-0">{{ contact.name }}</h3>
+                  <h4>{{person.position }}</h4>
+                  {{ person.email }}
+                  <a href="/team/{{contact.name | slugify }}">
+                    <span class="sr-only">{{ contact.name }}'s</span>
+                    Full profile
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </section>
+    {% endfor %}
   </div>
 </div>

@@ -1,14 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <title>{{page.title}}</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
 {% include header.html %}
 
-<div class="banner" style="background-image: url({{page.bannerImg}})"></div>
+<div class="banner" style="background-image: url({{page.bannerImg}})">
+  {% if page.bannerText %}
+    <h1 class="banner__header">{{page.bannerText}}</h1>
+  {%endif %}
+</div>
 
 <div class="container">
   {{ content }}
@@ -16,6 +20,6 @@
 
 {% include footer.html %}
 
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
