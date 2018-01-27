@@ -1,6 +1,7 @@
 // Colors
 $grey: #585858;
 $blue: #417fc0;
+$light-blue: #B2C5E1;
 
 $theme-colors: (
   "primary": $grey,
@@ -8,7 +9,8 @@ $theme-colors: (
 );
 
 $colors: (
-  "light-grey": #e6e6e6
+  "light-grey": #e6e6e6,
+  "light-blue": #B2C5E1
 );
 
 // Spacing
@@ -30,5 +32,5 @@ $headings-margin-bottom: $spacer;
 $body-color: $grey;
 
 // Banner
-$banner-height: 450px;
+$banner-height: 600px;
 
