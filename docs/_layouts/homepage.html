@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>{{page.title}}</title>
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+  </head>
+  <body>
+    {% include header.html %}
+
+    <div>
+      {% if page.pageHeader %}
+        <h1 class="text-center">{{page.pageHeader}}</h1>
+      {% endif %}
+
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+    <script src="{{site.baseurl}}/assets/js/main.js"></script>
+  </body>
+</html>
