@@ -1,0 +1,31 @@
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 200px;
+  transform: translate3d(100%,0,0);
+  box-shadow: 5px -10px 18px -7px inset;
+
+  @include media-breakpoint-up('md') {
+    display: none;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid;
+    border-bottom-color: color("light-grey");
+  }
+}
+
+.inner-wrap {
+  transform: translate3d(0,0,0);
+  transition: transform 500ms ease;
+
+  &--show-menu {
+    transform: translate3d(-12.625rem,0,0);
+
+    @include media-breakpoint-up('md') {
+      transform: translate3d(0,0,0);
+    }
+  }
+}

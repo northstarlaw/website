@@ -1,83 +1,54 @@
 (function () {
   'use strict';
   var d = document;
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  d.documentElement.className =
+    d.documentElement.className.replace('no-js', 'js');
 
-  // Helper Classes
-  var _ = function (node) {
+  var _tabs = _('.tabs');
+  var _mobileMenu = _('.inner-wrap')[0];
 
-      if(!node) {
-        throw Error('Please specify element or node');
-        return;
+  if (_mobileMenu) {
+    _mobileMenu.addEventListener('click', function (e) {
+      if(_(e.target).hasClass('navbar-toggler')) {
+        _(this).toggleClass('inner-wrap--show-menu');
       }
+    })
+  }
 
-      if(node.nodeType !== Node.ELEMENT_NODE) {
-        if(d.querySelector(node)) {
-          node = d.querySelector(node);
-        } else {
-          throw Error('No element matching that description');
-        }
-      }
-
-      var hasClass = function (_class) {
-        return !!node.className.match(_class);
-      };
-
-      var addClass = function (_class) {
-        if (!hasClass(_class)) {
-          node.className += ' ' + _class;
-          node.className = node.className.trim();
-        }
-      };
-
-      var removeClass = function (_class) {
-        if (hasClass(_class)) {
-          node.className = node.className.replace(_class, '').trim();
-        }
-      };
-
-      return {
-        hasClass: hasClass,
-        removeClass: removeClass,
-        addClass: addClass
-      }
-  };
-
-  var tabs = d.querySelector('.tabs');
-
-  if (tabs) {
+  if (_tabs) {
+    var tabs = _tabs[0];
     var tabsHideClass = 'tabs__item--hidden';
     var tabShowClass = 'tabs__link--active';
-    var links = tabs.querySelectorAll('.tabs__link');
-    var content = tabs.querySelectorAll('.tabs__item');
-    var banner = d.querySelector('.banner');
-    var bannerHeader = banner.querySelector('.banner__header');
     var initialCall = true;
+    var _links = _(tabs).find('.tabs__link');
+    var _content = _(tabs).find('.tabs__item');
+    var _banner = _('.banner')[0];
+    var _bannerHeader = _(_banner).find('.banner__header')[0];
 
     var tabEvents = {
       showActiveTab: function (args) {
         var id = args.id.replace(/^#/, '');
-        tabs.querySelector('[href="#' + id + '"]').setAttribute('aria-selected', true);
-        tabs.querySelector('[href="#' + id + '"]').setAttribute('title', 'Active tab');
-        d.getElementById(id).setAttribute('aria-hidden', 'false');
+        _(tabs).find('[href="#' + id + '"]').attr('aria-selected', true);
+        _(tabs).find('[href="#' + id + '"]').attr('title', 'Active tab');
+        _('#' + id).attr('aria-hidden', 'false');
 
-        _(tabs.querySelector('[href="#' + id + '"]')).addClass(tabShowClass);
-        _(tabs.querySelector('#' + id)).removeClass(tabsHideClass);
+        _(tabs).find('[href="#' + id + '"]').addClass(tabShowClass);
+        _(tabs).find('#' + id).removeClass(tabsHideClass);
 
-        if(banner && bannerHeader && args.img && args.text) {
-          banner.style.backgroundImage = "url('" + args.img + "')";
-          bannerHeader.innerText = args.text;
+        if(_banner && _bannerHeader && args.img && args.text) {
+          _banner.style.backgroundImage = "url('" + args.img + "')";
+          _bannerHeader.innerText = args.text;
         }
       },
       resetTabs: function (body, index) {
-        body.setAttribute('aria-hidden', 'true');
-        links[index].setAttribute('aria-selected', false);
-        links[index].removeAttribute('title');
+        _(body).attr('aria-hidden', 'true');
+        _(_links[index]).attr('aria-selected', false);
+        _(_links[index]).attr('title', '');
 
         _(body).addClass(tabsHideClass);
-        _(links[index]).removeClass(tabShowClass);
+        _(_links[index]).removeClass(tabShowClass);
 
-        if(index === content.length - 1 && initialCall) {
+        if(index === _content.length - 1 && initialCall) {
           tabEvents.setInitialTab();
         }
       },
@@ -85,7 +56,7 @@
         e.preventDefault();
         window.location.hash = e.target.hash;
 
-        [].forEach.call(content, tabEvents.resetTabs);
+        [].forEach.call(_content, tabEvents.resetTabs);
 
         tabEvents.showActiveTab({
           id: e.target.hash,
@@ -95,10 +66,10 @@
 
       },
       setInitialTab: function () {
-        var link = tabs.querySelector('[href="' + window.location.hash + '"]');
+        var link = _(tabs).find('[href="' + window.location.hash + '"]');
         var initialTab = link
-          ? { id: window.location.hash, img: link.dataset.img, text: link.dataset.text }
-          : { id: content[0].id, img: links[0].dataset.img, text: links[0].dataset.text };
+          ? { id: window.location.hash, img: link[0].dataset.img, text: link[0].dataset.text }
+          : { id: _content[0].id, img: _links[0].dataset.img, text: _links[0].dataset.text };
 
         tabEvents.showActiveTab(initialTab);
 
@@ -113,8 +84,8 @@
       }
     };
 
-    [].forEach.call(links, tabEvents.bindClickEvent);
-    [].forEach.call(content, tabEvents.resetTabs);
+    _links.forEach(tabEvents.bindClickEvent);
+    _content.forEach(tabEvents.resetTabs);
   }
 
 })();
