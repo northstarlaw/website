@@ -5,12 +5,14 @@
     d.documentElement.className.replace('no-js', 'js');
 
   var _tabs = _('.tabs');
-  var _mobileMenu = _('.inner-wrap')[0];
+  var _mobileMenu = _('.js-mobile-menu');
 
   if (_mobileMenu) {
+    _mobileMenu = _mobileMenu[0];
+
     _mobileMenu.addEventListener('click', function (e) {
       if(_(e.target).hasClass('navbar-toggler')) {
-        _(this).toggleClass('inner-wrap--show-menu');
+        _(this).toggleClass('mobile-menu-wrap--show-menu');
       }
     })
   }
