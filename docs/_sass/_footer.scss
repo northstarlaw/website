@@ -3,6 +3,12 @@
   padding-top: $spacer * 2;
   padding-bottom: ($spacer /2);
   margin-top: $spacer * 3;
+  h1 {
+    font-size: 1rem;
+  }
+  li, address {
+    font-size: 0.8rem;
+  }
 }
 
 .footer-legal {
