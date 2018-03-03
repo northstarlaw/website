@@ -5,18 +5,26 @@
     <title>{{page.title}}</title>
     {% include css.html %}
   </head>
+  {% if page.url == '/' %}
+  <body class="header-transparent banner-template">
+  {% else %}
   <body>
+  {% endif %}
+
     {% include header.html %}
 
-    <div>
-      {% if page.pageHeader %}
-        <h1 class="text-center">{{page.pageHeader}}</h1>
-      {% endif %}
+    {% if page.hero %}
+      {% include hero.html heroUrl=page.hero external=page.external %}
+    {% endif %}
 
-      {{ content }}
-    </div>
+    <main>
+        {{ content }}
+    </main>
 
     {% include footer.html %}
+
+    {% include mobile-menu.html %}
+
     <script src="{{site.baseurl}}/assets/js/underscore-helpers.js"></script>
     <script src="{{site.baseurl}}/assets/js/main.js"></script>
   </body>

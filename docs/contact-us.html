@@ -3,9 +3,9 @@ title: North Star Law - Contact Us
 layout: default
 ---
 
-<div class="row">
+<div class="grid">
   <div class="col-md-8">
-    <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2483.7077130457683!2d-0.189238!3d51.500231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760ff6150edf79%3A0x17e4a3b6ad0bd9ae!2sSt+James+House%2C+13+Kensington+Square%2C+Kensington%2C+London+W8+5HD%2C+UK!5e0!3m2!1sen!2sus!4v1516546526825" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div id="map"></div>
   </div>
   <div class="col-md-4">
     <h1>Contact Us</h1>
@@ -20,16 +20,73 @@ layout: default
     </address>
 
     <h2>Contact</h2>
-    <ul class="list-unstyled">
+    <ul class="list--unstyled">
       <li><abbr title="Telephone">T</abbr>: 0203 355 9610</li>
       <li><abbr title="Fax">F</abbr>: 0203 355 9615</li>
       <li><abbr title="Email">E</abbr>: info@northstarlaw.co.uk</li>
     </ul>
 
     <h2>Follow</h2>
-    <ul class="list-unstyled">
+    <ul class="list--unstyled">
       <li><a href="">LinkedIn</a></li>
       <li><a href="">Twitter</a></li>
     </ul>
   </div>
 </div>
+
+<script>
+  var initMap = function () {
+    var latLong = {lat: 51.5002375, lng: -0.1892626};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 51.5002375, lng: -0.1916248},
+      zoom: 17,
+      styles: [
+          {
+          "featureType": "poi.attraction",
+          "elementType": "labels",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.business",
+          "elementType": "labels",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.school",
+          "elementType": "labels",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        }
+      ]
+    });
+
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
+
+    var marker = new google.maps.Marker({
+      position: latLong,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: 'North Star Law Ltd.'
+    });
+    marker.addListener('click', toggleBounce);
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-zUfvMzP6xnVE_jsV-9nUV-ID68OWcVs&callback=initMap"
+        async defer></script>

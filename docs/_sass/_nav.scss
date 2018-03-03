@@ -9,14 +9,9 @@
         margin-left: 0.5rem;
       }
 
-      @include hover-focus {
-        border-bottom-color: theme-color("secondary");
-      }
-      &-active {
-        border-bottom-color: theme-color("secondary");
-      }
-    }
-  }
+  //@include hover-focus {
+    border-bottom-color: theme-color("secondary");
+  //}
 }
 
 

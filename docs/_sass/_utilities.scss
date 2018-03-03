@@ -1,0 +1,119 @@
+.text {
+  &-right {
+    text-align: right;
+
+    @include tablet {
+      &-md {
+        text-align: right;
+      }
+    }
+
+    @include desktop {
+      &-lg {
+        text-align: right;
+      }
+    }
+  }
+
+  &-left {
+    text-align: left;
+
+    @include tablet {
+      &-md {
+        text-align: left;
+      }
+    }
+
+    @include desktop {
+      &-lg {
+        text-align: left;
+      }
+    }
+  }
+
+  &-center {
+    text-align: center;
+
+    @include tablet {
+      &-md {
+        text-align: center;
+      }
+    }
+
+    @include desktop {
+      &-lg {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+
+  @include tablet {
+    &-md {
+      display: flex;
+    }
+  }
+
+  &--center-align {
+    align-items: center;
+  }
+
+  &--self-center {
+    align-self: center;
+
+    @include tablet {
+      &-md {
+        align-self: center;
+      }
+    }
+  }
+
+  &--self-end {
+    align-self: end;
+
+    @include tablet {
+      &-md {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+
+  &--end-align {
+    align-items: flex-end;
+  }
+  @include tablet {
+    &-md--end-align {
+      align-items: flex-end;
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.hide {
+  display: none!important;
+}
+
+.show {
+  display: block!important;
+}
+
+.space-between {
+  justify-content: space-between;
+}

@@ -1,15 +1,58 @@
 ---
 title: North Star Law
-layout: homepage
+layout: home
+hero: assets/images/photo-1508711046474-2f4c2d3d30ca.jpeg
+external: false
 ---
 
-<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1502864371730-9f80473ee677?ixlib=rb-0.3.5&s=812a38268ac6bf10afb2786490002263&auto=format&fit=crop&w=2124&q=80)">
-  <div class="btn-group">
-    <div class="row align-items-end mx-auto">
-      <a class="btn-lg btn-primary col m-1 mb-4" href="#" role="button">Property</a>
-      <a class="btn-lg btn-primary col m-1 mb-4" href="#" role="button">Immigration</a>
-      <a class="btn-lg btn-primary col m-1 mb-4" href="#" role="button">Wills Probate and Tax</a>
-      <a class="btn-lg btn-primary col m-1 mb-4" href="#" role="button">Dispute Resolution</a> 
+<div class="loading-screen">
+  <div class="logo text-center">
+    <img src="{{site.baseurl}}/assets/images/white-logo.png" alt="Loading...">
+  </div>
+  <div class="loading-screen__background"></div>
+</div>
+
+
+<div class="text-center text-lead home-lead container">
+  <p>
+    North Star Law provides practical, informed and experienced legal advise specialising in property law, private client/tax and immigration law.
+  </p>
+
+  <p>
+    The commitment to legal excellence, client service and practical solutions has earnt North Star Law a number of prestigious legal awards and as a result North Star Law today acts for a broad range of international clients including multinationals, SMEs, entrepreneurs as well as an enviable list of private clients.
+  </p>
+
+  <p>
+    North Star Law strives to provide intelligent, dynamic solutions to the clients’ legal problems.
+  </p>
+
+  <div class="section">
+    {% include star.html size="30" %}
+    <hr>
+  </div>
+</div>
+
+
+<div class="what-we-do text-center flex flex--center-align flex-column" style="background-image: url({{site.baseurl}}/assets/images/d.jpeg)">
+
+  <div class="what-we-do__wrap">
+    <div class="what-we-do__title">
+      What we do
     </div>
+
+    <p class="what-we-do__text container">
+      North Star Law strives offer a wide variety of legal advice
+    </p>
+
+    <a href="{{site.baseurl}}/what-we-do" class="button">
+      Learn more
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    {% include star.html size="30" %}
+    <hr>
   </div>
 </div>

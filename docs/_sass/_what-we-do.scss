@@ -1,0 +1,35 @@
+.what-we-do {
+  height: 465px;
+  color: color("light-grey");
+  background-position: center;
+  background-size: cover;
+
+  @include tablet {
+    height: 540px;
+  }
+
+  flex-flow: column;
+  justify-content: center;
+
+  &__title {
+    font-size: $font-large;
+
+    @include tablet {
+      font-size: $font-xlarge;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-size: $font-xlarge;
+    text-shadow: 0px 0px 10px #000000, 0px 0px 10px #000000;
+    margin-bottom: 30px;
+    font-family: $font-cormarant;
+    font-weight: 200;
+  }
+
+  &__wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}

@@ -1,18 +1,24 @@
 ---
 title: The Team - North Star Law
-layout: default
-pageHeader: The Team
+layout: banner
+bannerUrl: assets/images/jeff-golenski-100379-unsplash.jpg
 ---
 
-<ul class="list-unstyled row team-list">
+<h1>Meet the Team</h1>
+
+<p>All North Star employees...</p>
+
+<ul class="grid team-list">
   {% for member in site.data.people %}
-  <li class="col-lg-4 col-md-6 mb-4">
-    <a class="media" href="{{site.baseurl}}/team/{{ member.name | slugify }}">
-      <img class="mr-3 align-self-center rounded" src="{{ member.image['url'] }}" alt="">
-      <div class="media-body team-list__content">
-        <h2 class="mt-0 team-list__title">{{ member.name }}</h2>
-        <h3 class="team-list__position"> {{ member.position }}</h3>
-        {{ member.contact.email }}
+  <li class="col-lg-4 col-md-6">
+    <a href="{{site.baseurl}}/team/{{ member.name | slugify }}" class="team-list__item">
+      <img class="team-list__image" src="{{ member.image['url'] }}" alt="">
+      <div class="team-list__content">
+        <span class="team-list__title h3">{{ member.name }}</span>
+        <small class="team-list__subtitles">
+          <span class="team-list__position"> {{ member.position }}</span>
+          {{ member.contact.email }}
+        </small>
       </div>
     </a>
   </li>

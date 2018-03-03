@@ -1,0 +1,20 @@
+.team-member {
+  padding-left: 280px;
+  position: relative;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-right: $spacer;
+  }
+
+  &__contact-details {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul {
+    margin-bottom: $spacer;
+  }
+}

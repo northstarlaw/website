@@ -1,10 +1,47 @@
 .team-list {
-  &__title,
-  &__position {
-    font-size: $spacer;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    color: theme-color("primary");
+    margin-bottom: 50px;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+
+  &__image {
+    display: block;
   }
 
   &__content {
-    word-break: break-all;
+    border-top: 4px solid;
+    border-color: theme-color("secondary");
+    padding: 10px 20px 10px 15px;
+    position: relative;
+
+    &:after {
+      font-family: 'icomoon';
+      color: theme-color("secondary");
+      content: '\e902';
+      display: inline-block;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__position {
+    display: block;
+    font-weight: $font-weight-bold;
   }
 }

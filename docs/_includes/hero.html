@@ -1,0 +1,15 @@
+{% if include.external %}
+  {% capture heroUrl %}{{include.heroUrl}}{% endcapture %}
+{% else %}
+  {% capture heroUrl %}{{site.baseurl}}/{{include.heroUrl}}{% endcapture %}
+{% endif %}
+
+<div class="hero flex flex--center-align" style="background-image: url({{heroUrl}})">
+  <p class="hero__text text-center container">
+    North Star Law strives to provide intelligent,
+    dynamic solutions to the clients’ legal problems.
+  </p>
+</div>
+<div class="hero__section text-center">
+  Read more...
+</div>

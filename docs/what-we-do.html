@@ -1,21 +1,68 @@
 ---
-title: North Star Law
-layout: default
-pageHeader: What We Do
+title: What We Do - North Star Law
+layout: banner
+bannerUrl: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2850&q=80
+bannerExternal: true
 ---
 
-<ul class="list-unstyled row department-list">
-  {% for department in site.data.departments %}
-    <li class="col-4 department-list__department">
-        <a href="{{site.baseurl}}/what-we-do/department#{{department.title | slugify}}" class="card">
-          <img class="card-img-top" src="{{ department.image.url }}" alt="{{ department.image.alt }}">
-          <div class="card-body">
-            <h2 class="card-title">{{ department.title }}</h2>
-            <div class="card-description">
-              {{ department.description | truncate: 150 }}
+<div class="grid">
+  <div class="col-4">
+    Our Departments
+  </div>
+  <div class="col-8 text-right">
+    <span class="d-none d-sm-block">Key Contact</span>
+  </div>
+</div>
+<div class="tabs grid">
+  <div class="col-4">
+    <aside>
+      <h1 class="sr-only">Our Departments</h1>
+      <ul class="tabs__links list-unstyled">
+        {% for department in site.data.departments %}
+        <li role="tab" aria-controls="{{ department.title | slugify }}">
+          <a class="tabs__link"
+             href="#{{ department.title | slugify }}"
+             data-img="{{ department.image.url }}"
+             data-text="{{ department.title }}"
+             title="Active tab"
+             id="{{department.title | slugify}}-tab"
+          >
+            {{department.title}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+  </div>
+  <div class="col-8">
+    {% for department in site.data.departments %}
+    <section id="{{department.title | slugify}}" class="tabs__item row" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
+      <div class="col-md-8">
+        <h1 class="sr-only">{{ department.title }}</h1>
+        {{department.description}}
+      </div>
+      <div class="col-md-4">
+        {% if department.contacts %}
+          <h2 class="sr-only">Key Contacts</h2>
+          {% for contact in department.contacts %}
+            {% assign person = site.data.people[contact.name] %}
+            <div class="media mb-4">
+              <img class="mr-3" src="{{ person.image.url }}" alt="">
+              <div class="media-body">
+                <h3>{{ contact.name }}</h3>
+                <h4>{{person.position }}</h4>
+                {{ person.email }}
+                <a href="/team/{{contact.name | slugify }}">
+                  <span class="sr-only">{{ contact.name }}'s</span>
+                  Full profile
+                </a>
+              </div>
             </div>
-          </div>
-        </a>
-    </li>
-  {% endfor %}
-</ul>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+

@@ -3,30 +3,34 @@ title: North Star Law
 layout: default
 ---
 
-<a href="{{site.baseurl}}/team">Back</a>
+<div class="breadcrumb">
+  <a href="{{site.baseurl}}">Home</a>
+  <a href="{{site.baseurl}}/team">Team</a>
+  Benedikte Malling Bech
+</div>
 
 {% assign profile = site.data.people[0] %}
 
-<div class="media mt-4">
-  <img class="mr-5" src="http://via.placeholder.com/250x350" alt="">
-  <div class="media-body">
-    <h1 class="mt-0">{{ profile.name }}</h1>
+<div class="team-member">
+  <img src="http://via.placeholder.com/250x350" alt="" class="team-member__image">
+  <div class="team-member__body">
+    <h1>{{ profile.name }}</h1>
+
+    {% if profile.contact %}
+    <ul class="team-member__contact-details">
+      {% for contactMethod in profile.contact %}
+      <li>{{contactMethod[0]}}: {{contactMethod[1]}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
     {{ profile.description }}
 
     {% if profile.qualifications %}
       <h2>Qualifications</h2>
-      <ul class="list-unstyled">
+      <ul>
         {% for qualification in profile.qualifications %}
         <li>{{qualification}}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-    {% if profile.contact %}
-      <ul class="list-unstyled">
-        {% for contactMethod in profile.contact %}
-          <li>{{contactMethod[0]}}: {{contactMethod[1]}}</li>
         {% endfor %}
       </ul>
     {% endif %}

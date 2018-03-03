@@ -1,0 +1,147 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$colgutter;
+  margin-right: -$colgutter;
+
+  .grid {
+    margin: 0;
+  }
+
+  &--center-align {
+    align-items: center;
+  }
+
+  &--end-align {
+    align-items: flex-end;
+  }
+  @include tablet {
+    &-md--end-align {
+      align-items: flex-end;
+    }
+  }
+}
+
+.col, .col-md, .col-lg, .col-m {
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+
+.col {
+  &-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+
+  &-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  &-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@include tablet {
+  .col {
+    padding-right: $colgutter;
+    padding-left: $colgutter;
+
+    &-md, &-4, &-6, &-8 {
+      padding-right: $colgutter;
+      padding-left: $colgutter;
+    }
+
+    &-md {
+      flex-basis: 0;
+      max-width: 100%;
+      flex-grow: 1;
+
+      &-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      &-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      &-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .col {
+    &-lg, &-4, &-6, &-8 {
+      padding-right: $colgutter;
+      padding-left: $colgutter;
+    }
+
+    &-lg {
+      flex-basis: 0;
+      max-width: 100%;
+      flex-grow: 1;
+
+      &-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      &-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      &-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+    }
+  }
+}
+
+@include desktop-wide {
+  .col {
+    &-xl, &-6, &-4, &-8 {
+      padding-right: $colgutter;
+      padding-left: $colgutter;
+    }
+
+    &-xl {
+      flex-basis: 0;
+      max-width: 100%;
+      flex-grow: 1;
+
+      &-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      &-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      &-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+    }
+  }
+}
+
+.container {
+  .grid:first-child {
+    .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

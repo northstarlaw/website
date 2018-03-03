@@ -3,26 +3,34 @@
 <head>
   <meta charset="utf-8">
   <title>{{page.title}}</title>
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+  {% include css.html %}
 </head>
+{% if page.bannerUrl %}
+<body class="banner-template">
+{% else %}
 <body>
-  <div class="js-mobile-menu mobile-menu-wrap">
+{% endif %}
     {% include header.html %}
 
-    <div class="banner" style="background-image: url({{page.bannerImg}})">
-      {% if page.bannerText %}
-        <h1 class="banner__header">{{page.bannerText}}</h1>
+      {% if page.bannerUrl %}
+        {% if page.bannerExternal %}
+          {% assign bannerUrl = page.bannerUrl %}
+        {% else %}
+          {% capture bannerUrl %}{{site.baseurl}}/{{page.bannerUrl}}{% endcapture %}
+        {% endif %}
+        <div class="banner" style="background-image: url({{bannerUrl}})"></div>
       {%endif %}
-    </div>
 
-    <div class="container">
-      {{ content }}
-    </div>
+
+      <div class="container body-container">
+        <main>
+          {{ content }}
+        </main>
+      </div>
 
     {% include mobile-menu.html %}
 
     {% include footer.html %}
-  </div>
   <script src="{{site.baseurl}}/assets/js/underscore-helpers.js"></script>
   <script src="{{site.baseurl}}/assets/js/main.js"></script>
 </body>

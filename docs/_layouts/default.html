@@ -3,25 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>{{page.title}}</title>
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    {% include css.html %}
   </head>
+  {% if page.url == '/' %}
+  <body class="header-transparent banner-template">
+  {% else %}
   <body>
-    <div class="js-mobile-menu mobile-menu-wrap">
-      {% include header.html %}
+  {% endif %}
 
-      <div class="container">
-        {% if page.pageHeader %}
-          <h1 class="text-center">{{page.pageHeader}}</h1>
-        {% endif %}
+    {% include header.html %}
 
+    {% if page.hero %}
+      {% include hero.html heroUrl=page.hero external=page.external %}
+    {% endif %}
+
+    <div class="container body-container">
+      {% if page.pageHeader %}
+        <h1 class="text-center">{{page.pageHeader}}</h1>
+      {% endif %}
+
+      <main>
         {{ content }}
-      </div>
-
-      {% include footer.html %}
+      </main>
+    </div>
 
       {% include mobile-menu.html %}
     </div>
 
+    {% include mobile-menu.html %}
     <script src="{{site.baseurl}}/assets/js/underscore-helpers.js"></script>
     <script src="{{site.baseurl}}/assets/js/main.js"></script>
   </body>

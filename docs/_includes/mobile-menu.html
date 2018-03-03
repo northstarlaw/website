@@ -1,15 +1,29 @@
 <div class="mobile-menu">
-  <ul class="list-unstyled">
-    <li class="nav-item">
+  <button class="js-mobile-menu-close mobile-menu__close icon-close" type="button">
+    <span class="sr-only">Close</span>
+  </button>
+  <ul class="list--unstyled">
+    <li class="mobile-menu__nav-item">
       <a class="nav-link" href="{{site.baseurl}}/about">About</a>
     </li>
-    <li class="nav-item">
+    <li class="mobile-menu__nav-item">
       <a class="nav-link" href="{{site.baseurl}}/team">The Team</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{site.baseurl}}/what-we-do">What We Do</a>
+    <li class="mobile-menu__nav-item">
+      <a class="nav-link js-dropdown dropdown-link" href="{{site.baseurl}}/what-we-do" aria-expanded="false">
+        What We Do
+        <span class="icon-chevron dropdown__icon"></span>
+      </a>
+
+      <ul class="list--unstyled dropdown mobile-menu__nav-dropdown dropdown">
+        <li class="hero__links-item"><a href="#">Dispute Resolution</a></li>
+        <li class="hero__links-item"><a href="#">Family & Matrimonial</a></li>
+        <li class="hero__links-item"><a href="#">Immigration</a></li>
+        <li class="hero__links-item"><a href="#">Property</a></li>
+        <li class="hero__links-item"><a href="#">Tax</a></li>
+      </ul>
     </li>
-    <li class="nav-item">
+    <li class="mobile-menu__nav-item">
       <a class="nav-link" href="{{site.baseurl}}/contact-us">Contact Us</a>
     </li>
   </ul>

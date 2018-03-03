@@ -8,23 +8,8 @@
     border-bottom-color: #417fc0;
 }
 
-.navbar-collapse {
-  position: absolute;
-  right: -100%;
-
-  &.show {
-    right: 0;
-  }
-}
-
-.navbar-toggler {
-  &:focus {
-    outline: none;
-  }
-}
-
 .navbar-nav {
-  @include media-breakpoint-down('sm') {
+  //@include media-breakpoint-down('sm') {
     display: none;
-  }
+  //}
 }
