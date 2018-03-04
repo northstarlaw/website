@@ -3,6 +3,14 @@
   image:
     url: https://images.unsplash.com/photo-1418225162054-0f773a996f9e?auto=format&fit=crop&w=2858&q=80
     alt: Dispute Resolution
+  contacts:
+      - name: Benedikte Mailing Bach
+        position: Director
+        image:
+            url: http://via.placeholder.com/300x300
+            alt:
+        contact:
+          email: bm@northstarlaw.co.uk
 
 - title: Family & Maritonial
   description: <p>Our immigration team help individuals and businesses from all round the world to gain the correct permissions to come to or remain in the UK. We provide strategic immigration advice at every step of the journey in order to help our clients achieve their long-term goals in the UK.</p>
@@ -11,6 +19,21 @@
   image:
     url: https://images.unsplash.com/photo-1509092564125-0a8f31e9710e?auto=format&fit=crop&w=1650&q=80
     alt: Family & Maritonial
+  contacts:
+    - name: Zoe Bloom
+      position: Solicitor
+      image:
+          url: http://via.placeholder.com/300x300
+          alt:
+      contact:
+        email: zb@northstarlaw.co.uk
+    - name: Alexander Blain
+      position: Paralegal
+      image:
+          url: http://via.placeholder.com/300x300
+          alt:
+      contact:
+        email: ab@northstarlaw.co.uk
 
 - title: Immigration
   description: <p>Our immigration team help individuals and businesses from all round the world to gain the correct permissions to come to or remain in the UK. We provide strategic immigration advice at every step of the journey in order to help our clients achieve their long-term goals in the UK.</p>

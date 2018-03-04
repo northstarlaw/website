@@ -6,53 +6,52 @@ bannerExternal: true
 ---
 
 <div class="grid">
-  <div class="col-4">
+  <div class="col-4 h2">
     Our Departments
   </div>
   <div class="col-8 text-right">
-    <span class="d-none d-sm-block">Key Contact</span>
+    <span class="d-none d-sm-block h2">Key Contact</span>
   </div>
 </div>
 <div class="tabs grid">
-  <div class="col-4">
+  <div class="col-3">
     <aside>
       <h1 class="sr-only">Our Departments</h1>
-      <ul class="tabs__links list-unstyled">
+      <div class="tabs__links list--unstyled" role="tablist">
         {% for department in site.data.departments %}
-        <li role="tab" aria-controls="{{ department.title | slugify }}">
           <a class="tabs__link"
+             aria-controls="{{ department.title | slugify }}"
              href="#{{ department.title | slugify }}"
              data-img="{{ department.image.url }}"
              data-text="{{ department.title }}"
              title="Active tab"
              id="{{department.title | slugify}}-tab"
+             role="tab"
           >
             {{department.title}}
           </a>
-        </li>
         {% endfor %}
-      </ul>
+      </div>
     </aside>
   </div>
-  <div class="col-8">
+  <div class="col-9">
     {% for department in site.data.departments %}
-    <section id="{{department.title | slugify}}" class="tabs__item row" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
-      <div class="col-md-8">
-        <h1 class="sr-only">{{ department.title }}</h1>
+    <section id="{{department.title | slugify}}" class="tabs__item grid" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
+      <div class="col-md-9 tabs__item-content">
+        <h2 class="sr-only">{{ department.title }}</h2>
         {{department.description}}
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         {% if department.contacts %}
-          <h2 class="sr-only">Key Contacts</h2>
+          <h3 class="sr-only">Key Contacts</h3>
           {% for contact in department.contacts %}
-            {% assign person = site.data.people[contact.name] %}
-            <div class="media mb-4">
-              <img class="mr-3" src="{{ person.image.url }}" alt="">
-              <div class="media-body">
-                <h3>{{ contact.name }}</h3>
-                <h4>{{person.position }}</h4>
-                {{ person.email }}
-                <a href="/team/{{contact.name | slugify }}">
+            <div class="tabs__contact">
+              <img class="tabs__contact-image" src="{{ contact.image.url }}" alt="{{ contact.image.alt }}">
+              <div class="tabs__contact-body">
+                <h4 class="tabs__contact-name">{{ contact.name }}</h4>
+                <h5 class="tabs__contact-position">{{ contact.position }}</h5>
+                <div class="tabs__contact-email">{{ contact.contact.email }}</div>
+                <a href="{{site.baseurl}}/team/{{contact.name | slugify }}" class="tabs__contact-link">
                   <span class="sr-only">{{ contact.name }}'s</span>
                   Full profile
                 </a>

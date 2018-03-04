@@ -148,16 +148,18 @@
       },
       clickHandler: function (e) {
         e.preventDefault();
-        window.location.hash = e.target.hash;
 
-        [].forEach.call(_content, tabEvents.resetTabs);
+        if(e.target.getAttribute('aria-selected') === 'false') {
+          window.location.hash = e.target.hash;
 
-        tabEvents.showActiveTab({
-          id: e.target.hash,
-          img: e.target.dataset.img || null,
-          text: e.target.dataset.text || null
-        });
+          [].forEach.call(_content, tabEvents.resetTabs);
 
+          tabEvents.showActiveTab({
+            id: e.target.hash,
+            img: e.target.dataset.img || null,
+            text: e.target.dataset.text || null
+          });
+        }
       },
       setInitialTab: function () {
         var link = _(tabs).find('[href="' + window.location.hash + '"]');

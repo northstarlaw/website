@@ -66,9 +66,24 @@
   padding-right: $colgutter;
   padding-left: $colgutter;
 
+  &-2 {
+    flex: 0 0 16.5%;
+    max-width: 16.5%;
+  }
+
+  &-3 {
+    flex: 0 0 24.75%;
+    max-width: 24.75%;
+  }
+
   &-4 {
     flex: 0 0 33.33%;
     max-width: 33.33%;
+  }
+
+  &-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 
   &-8 {
@@ -76,9 +91,14 @@
     max-width: 66.666667%;
   }
 
-  &-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+  &-9 {
+    flex: 0 0 75.08%;
+    max-width: 75.08%;
+  }
+
+  &-10 {
+    flex: 0 0 83.33%;
+    max-width: 83.33%;
   }
 }
 
@@ -97,6 +117,16 @@
       max-width: 100%;
       flex-grow: 1;
 
+      &-2 {
+        flex: 0 0 16.5%;
+        max-width: 16.5%;
+      }
+
+      &-3 {
+        flex: 0 0 24.75%;
+        max-width: 24.75%;
+      }
+
       &-4 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
@@ -110,6 +140,16 @@
       &-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
+      }
+
+      &-9 {
+        flex: 0 0 75.08%;
+        max-width: 75.08%;
+      }
+
+      &-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
       }
     }
   }
@@ -127,6 +167,16 @@
       max-width: 100%;
       flex-grow: 1;
 
+      &-2 {
+        flex: 0 0 16.5%;
+        max-width: 16.5%;
+      }
+
+      &-3 {
+        flex: 0 0 24.75%;
+        max-width: 24.75%;
+      }
+
       &-4 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
@@ -140,6 +190,16 @@
       &-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
+      }
+
+      &-9 {
+        flex: 0 0 75.08%;
+        max-width: 75.08%;
+      }
+
+      &-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
       }
     }
   }
@@ -157,6 +217,16 @@
       max-width: 100%;
       flex-grow: 1;
 
+      &-2 {
+        flex: 0 0 16.5%;
+        max-width: 16.5%;
+      }
+
+      &-3 {
+        flex: 0 0 24.75%;
+        max-width: 24.75%;
+      }
+
       &-4 {
         flex: 0 0 33.33%;
         max-width: 33.33%;
@@ -170,6 +240,16 @@
       &-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
+      }
+
+      &-9 {
+        flex: 0 0 75.08%;
+        max-width: 75.08%;
+      }
+
+      &-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
       }
     }
   }
