@@ -34,7 +34,7 @@
   }
 
   .header__nav-item--active {
-    a {
+    > a {
       color: color("gold");
     }
   }
