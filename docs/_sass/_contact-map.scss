@@ -1,8 +1,10 @@
 #map {
   height: 502px;
   border: 1px solid color("blue");
+  margin-bottom: 10px;
 
   @include tablet {
     margin-right: 70px;
+    margin-bottom: 0;
   }
 }

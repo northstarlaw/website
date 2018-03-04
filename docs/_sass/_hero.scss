@@ -2,8 +2,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: $header-height;
-  height: $hero-height;
+  height: calc(100vh - 135px);
   color: color("light-grey");
   font-size: $hero-font-size;
 
