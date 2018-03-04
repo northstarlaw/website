@@ -2,6 +2,8 @@
   margin-bottom: $spacer * 2;
 
   a {
+    font-weight: $font-montserrat-regular;
+
     &:after {
       font-family: $icon-font;
       content: $icon-chevron;

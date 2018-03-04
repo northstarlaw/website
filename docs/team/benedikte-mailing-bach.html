@@ -6,7 +6,7 @@ layout: default
 <div class="breadcrumb">
   <a href="{{site.baseurl}}">Home</a>
   <a href="{{site.baseurl}}/team">Team</a>
-  Benedikte Malling Bech
+  Benedikte Malling Bach
 </div>
 
 {% assign profile = site.data.people[0] %}
@@ -19,9 +19,16 @@ layout: default
     {% if profile.contact %}
     <ul class="team-member__contact-details">
       {% for contactMethod in profile.contact %}
-      <li>{{contactMethod[0]}}: {{contactMethod[1]}}</li>
+      <li><span class="team-member__contact-method">{{contactMethod[0]}}:</span> {{contactMethod[1]}}</li>
       {% endfor %}
     </ul>
+    {% endif %}
+
+    {% if profile.vcard %}
+      <a href="{{site.baseurl}}/{{profile.vcard}}" download class="team-member__vcard">
+        <span class="icon-vcard"></span>
+        Download vCard
+      </a>
     {% endif %}
 
     {{ profile.description }}

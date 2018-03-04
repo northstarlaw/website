@@ -1,12 +1,17 @@
 .team-member {
-  padding-left: 280px;
   position: relative;
 
+  @include tablet {
+    padding-left: 280px;
+  }
+
   &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-right: $spacer;
+    @include tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: $spacer;
+    }
   }
 
   &__contact-details {
@@ -16,5 +21,24 @@
 
   ul {
     margin-bottom: $spacer;
+  }
+
+  &__contact-method {
+    font-weight: $font-montserrat-regular;
+  }
+
+  &__vcard {
+    color: color("gold");
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 15px;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    .icon-vcard {
+      color: color("blue");
+    }
   }
 }
