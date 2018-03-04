@@ -6,21 +6,29 @@ bannerUrl: assets/images/jeff-golenski-100379-unsplash.jpg
 
 <h1>Meet the Team</h1>
 
-<p>All North Star employees...</p>
+<p>
+  All North Star Law solicitors are focused on providing our clients with a top level quality of service which is why our clients come back again and again for our assistance.
+</p>
 
-<ul class="grid team-list">
-  {% for member in site.data.people %}
-  <li class="col-lg-4 col-md-6">
-    <a href="{{site.baseurl}}/team/{{ member.name | slugify }}" class="team-list__item">
-      <img class="team-list__image" src="{{ member.image['url'] }}" alt="">
-      <div class="team-list__content">
-        <span class="team-list__title h3">{{ member.name }}</span>
-        <small class="team-list__subtitles">
-          <span class="team-list__position"> {{ member.position }}</span>
-          {{ member.contact.email }}
-        </small>
-      </div>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<p>
+  Our legal excellence is combined with commercial reality, providing legal solutions to meet the clients' needs.
+</p>
+
+<div class="team-list">
+  <div class="grid">
+    {% for member in site.data.people %}
+    <div class="col col-lg-4 col-md-6">
+      <a href="{{site.baseurl}}/team/{{ member.name | slugify }}" class="team-list__item">
+        <img class="team-list__image" src="{{ member.image['url'] }}" alt="">
+        <div class="team-list__content">
+          <div class="team-list__title">{{ member.name }}</div>
+          <small class="team-list__subtitles">
+            <span class="team-list__position"> {{ member.position }}</span>
+            {{ member.contact.email }}
+          </small>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

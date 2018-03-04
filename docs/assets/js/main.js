@@ -119,6 +119,7 @@
     var _links = _(tabs).find('.tabs__link');
     var _content = _(tabs).find('.tabs__item');
     var _banner = _('.banner')[0];
+
     var tabEvents = {
       showActiveTab: function (args) {
         var id = args.id.replace(/^#/, '');

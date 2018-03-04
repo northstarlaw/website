@@ -4,10 +4,10 @@ layout: default
 ---
 
 <div class="grid">
-  <div class="col-md-8">
+  <div class="col col-md-8">
     <div id="map"></div>
   </div>
-  <div class="col-md-4">
+  <div class="col col-md-4">
     <h1>Contact Us</h1>
 
     <h2>Address</h2>
@@ -25,49 +25,31 @@ layout: default
       <li><abbr title="Fax">F</abbr>: 0203 355 9615</li>
       <li><abbr title="Email">E</abbr>: info@northstarlaw.co.uk</li>
     </ul>
-
-    <h2>Follow</h2>
-    <ul class="list--unstyled">
-      <li><a href="">LinkedIn</a></li>
-      <li><a href="">Twitter</a></li>
-    </ul>
   </div>
 </div>
 
 <script>
   var initMap = function () {
     var latLong = {lat: 51.5002375, lng: -0.1892626};
+    var blue = '#0d2333';
+    var lightGrey = '#e6e6e6';
+    var grey = '#4a4a4a';
+    var gold = '#d7b377';
+    var image = 'https://github.com/northstarlaw/website/blob/master/docs/assets/images/me.png';
+
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 51.5002375, lng: -0.1916248},
       zoom: 17,
       styles: [
-          {
-          "featureType": "poi.attraction",
-          "elementType": "labels",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "featureType": "poi.business",
-          "elementType": "labels",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "featureType": "poi.school",
-          "elementType": "labels",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        }
+        { elementType: 'geometry', stylers: [{color: '#ffffff' }] },
+        { elementType: 'labels.text.stroke', stylers: [{color: lightGrey}] },
+        { elementType: 'labels.text.fill', stylers: [{color: grey}] },
+        { featureType: 'poi.park', elementType: 'geometry', stylers: [{color: blue}] },
+        { featureType: 'road', elementType: 'geometry', stylers: [{color: lightGrey}] },
+        { featureType: 'road', elementType: 'geometry.stroke', stylers: [{color: blue}] },
+        { featureType: "poi.attraction", elementType: "labels", stylers: [{ visibility: "off" }]},
+        { featureType: "poi.business", elementType: "labels", stylers: [{ visibility: "off" }]},
+        { featureType: "poi.school", elementType: "labels", stylers: [{ visibility: "off" }]}
       ]
     });
 
@@ -83,8 +65,10 @@ layout: default
       position: latLong,
       map: map,
       animation: google.maps.Animation.DROP,
-      title: 'North Star Law Ltd.'
+      title: 'North Star Law Ltd.',
+      icon: image
     });
+
     marker.addListener('click', toggleBounce);
   }
 </script>

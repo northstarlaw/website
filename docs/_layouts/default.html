@@ -13,24 +13,20 @@
 
     {% include header.html %}
 
+    <div class="container">
     {% if page.hero %}
       {% include hero.html heroUrl=page.hero external=page.external %}
     {% endif %}
-
-    <div class="container body-container">
-      {% if page.pageHeader %}
-        <h1 class="text-center">{{page.pageHeader}}</h1>
-      {% endif %}
 
       <main>
         {{ content }}
       </main>
     </div>
 
-      {% include mobile-menu.html %}
-    </div>
+    {% include footer.html %}
 
     {% include mobile-menu.html %}
+
     <script src="{{site.baseurl}}/assets/js/underscore-helpers.js"></script>
     <script src="{{site.baseurl}}/assets/js/main.js"></script>
   </body>

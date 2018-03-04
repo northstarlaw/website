@@ -1,9 +1,11 @@
 .team-list {
-  padding: 0;
   list-style: none;
+  margin-top: 33px;
 
   &__item {
-    display: inline-block;
+    border: 1px solid;
+    border-color: color("light-grey");
+    display: block;
     box-shadow: 0 0 5px rgba(0,0,0, .8);
     color: theme-color("primary");
     margin-bottom: 50px;
@@ -11,37 +13,43 @@
     @include hover-focus {
       text-decoration: none;
     }
+
+    &:focus {
+      outline: 2px solid color("blue");
+    }
   }
 
   &__image {
     display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 
   &__content {
-    border-top: 4px solid;
-    border-color: theme-color("secondary");
-    padding: 10px 20px 10px 15px;
+    padding: 15px;
     position: relative;
 
     &:after {
       font-family: 'icomoon';
-      color: theme-color("secondary");
+      color: color("blue");
       content: '\e902';
       display: inline-block;
       position: absolute;
       right: 10px;
       top: 50%;
       transform: translate(0, -50%);
+      font-size: 2rem;
     }
   }
 
   &__title {
-    display: block;
-    margin-bottom: 5px;
+    font-family: $font-cormarant;
+    font-size: $font-large;
   }
 
   &__position {
     display: block;
-    font-weight: $font-weight-bold;
+    font-weight: $font-montserrat-regular;
   }
 }

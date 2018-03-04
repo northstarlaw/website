@@ -15,19 +15,57 @@
   &--end-align {
     align-items: flex-end;
   }
+
   @include tablet {
     &-md--end-align {
       align-items: flex-end;
     }
   }
+
+  &--no-gutters {
+    .col, .col-sm, .col-md, .col-lg {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include mobile {
+    &-sm--no-gutters {
+      > .col {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    &-md--no-gutters {
+      > .col-md-* {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include desktop {
+    &-lg--no-gutters {
+      > .col-lg-* {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
 }
 
-.col, .col-md, .col-lg, .col-m {
+.col, .col-md, .col-lg {
   flex: 1 0 100%;
   max-width: 100%;
 }
 
 .col {
+  padding-right: $colgutter;
+  padding-left: $colgutter;
+
   &-4 {
     flex: 0 0 33.33%;
     max-width: 33.33%;
@@ -49,7 +87,7 @@
     padding-right: $colgutter;
     padding-left: $colgutter;
 
-    &-md, &-4, &-6, &-8 {
+    &-md, &-md-4, &-md-6, &-md-8 {
       padding-right: $colgutter;
       padding-left: $colgutter;
     }
@@ -79,7 +117,7 @@
 
 @include desktop {
   .col {
-    &-lg, &-4, &-6, &-8 {
+    &-lg, &-lg-4, &-lg-6, &-lg-8 {
       padding-right: $colgutter;
       padding-left: $colgutter;
     }
@@ -109,7 +147,7 @@
 
 @include desktop-wide {
   .col {
-    &-xl, &-6, &-4, &-8 {
+    &-xl, &-xl-6, &-xl-4, &-xl-8 {
       padding-right: $colgutter;
       padding-left: $colgutter;
     }
@@ -137,11 +175,11 @@
   }
 }
 
-.container {
-  .grid:first-child {
-    .col {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-}
+//.container {
+//  .grid:first-child {
+//    .col {
+//      padding-left: 0;
+//      padding-right: 0;
+//    }
+//  }
+//}

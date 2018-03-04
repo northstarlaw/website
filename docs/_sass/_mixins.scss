@@ -23,6 +23,12 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
 // Retrieve color Sass maps
 @function color($key: "blue") {
   @return map-get($colors, $key);

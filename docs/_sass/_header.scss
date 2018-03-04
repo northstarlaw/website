@@ -1,16 +1,21 @@
 .header {
+  &__group {
+    padding-top: 70px;
+  }
+
   background-color: color("blue");
+  color: color("light-grey");
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
   font-size: 2rem;
+  padding: 10px 15px;
 
   &__logo {
     display: block;
     float: left;
-    padding: 10px;
   }
 
   a {
@@ -46,13 +51,12 @@
   }
 
   &__mobile-nav {
-    float: right;
-    padding: 20px;
+    float: right;;
     padding-right: 0;
     color: color("light-grey");
 
     @include tablet {
-      padding: 20px;
+      padding: 15px;
       display: none;
     }
   }
@@ -64,7 +68,7 @@
 
     > a {
       display: block;
-      margin: 24px 20px;
+      margin: 15px;
     }
   }
 

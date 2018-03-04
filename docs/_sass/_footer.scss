@@ -1,13 +1,7 @@
 .footer {
   background: color("blue");
+  color: color("light-grey");
   font-size: $font-large;
-  padding-bottom: 40px;
-  padding-top: 25px;
-
-  @include tablet {
-    padding-top: 36px;
-    padding-bottom: 36px;
-  }
 
   a {
     color: color("light-grey");
@@ -22,10 +16,6 @@
 
   &__first-row {
     margin-bottom: 50px;
-  }
-
-  li {
-    margin-bottom: 5px;
   }
 
   &__meta {
