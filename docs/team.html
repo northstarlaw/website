@@ -19,7 +19,7 @@ bannerUrl: assets/images/jeff-golenski-100379-unsplash.jpg
     {% for member in site.data.people %}
     <div class="col col-lg-4 col-md-6">
       <a href="{{site.baseurl}}/team/{{ member.name | slugify }}" class="team-list__item">
-        <img class="team-list__image" src="{{ member.image['url'] }}" alt="">
+        <img class="team-list__image" src="{{ member.image.url }}" alt="" srcset="{{ member.image.url2 }}">
         <div class="team-list__content">
           <div class="team-list__title">{{ member.name }}</div>
           <small class="team-list__subtitles">

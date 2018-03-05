@@ -15,7 +15,8 @@
     - University of Cambridge (M.Phil) 2000
     - University of Cambridge (MA Hons) 1999
   image:
-    url: http://via.placeholder.com/300x300
+    url: /website/assets/images/headshots/NorthStarLaw-Benedikte-20180226-1798.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-Benedikte-20180226-1798-2x.jpg
     alt:
 
 - name: Alexander Blain
@@ -26,30 +27,31 @@
     email: alex.blain@northstarlaw.co.uk
   qualifications:
   image:
-    url: http://via.placeholder.com/300x300
+    url: /website/assets/images/headshots/NorthStarLaw-AlexBlain-20180226-1975.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-AlexBlain-20180226-1975-2x.jpg
     alt:
 
-- name: Zoe Bloom
-  position: Solicitor
-  contact:
-    telephone: 020
-    fax: 030
-    email: zb@northstarlaw.co.uk
-  qualifications:
-  image:
-    url: http://via.placeholder.com/300x300
-    alt:
-
-- name: Mark Sullivan
-  position: Senior Dispute Resolution Solicitor
-  contact:
-    telephone: 020
-    fax: 030
-    email: mark.sullivan@northstarlaw.co.uk
-  qualifications:
-  image:
-    url: http://via.placeholder.com/300x300
-    alt:
+#- name: Zoe Bloom
+#  position: Solicitor
+#  contact:
+#    telephone: 020
+#    fax: 030
+#    email: zb@northstarlaw.co.uk
+#  qualifications:
+#  image:
+#    url: /website/assets/images/headshots/
+#    alt:
+#
+#- name: Mark Sullivan
+#  position: Senior Dispute Resolution Solicitor
+#  contact:
+#    telephone: 020
+#    fax: 030
+#    email: mark.sullivan@northstarlaw.co.uk
+#  qualifications:
+#  image:
+#    url: /website/assets/images/headshots/
+#    alt:
 
 - name: John Fox
   position: Solicitor
@@ -59,30 +61,31 @@
     email: john.fox@northstarlaw.co.uk
   qualifications:
   image:
-    url: http://via.placeholder.com/300x300
+    url: /website/assets/images/headshots/NorthStarLaw-John-20180226-1992.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-John-20180226-1992-2x.jpg
     alt:
 
-- name: Sarah Noake
-  position: Private Client Lawyer
-  contact:
-    telephone: 020
-    fax: 030
-    email: sarah.noake@northstarlaw.co.uk
-  qualifications:
-  image:
-    url: http://via.placeholder.com/300x300
-    alt:
+#- name: Sarah Noake
+#  position: Private Client Lawyer
+#  contact:
+#    telephone: 020
+#    fax: 030
+#    email: sarah.noake@northstarlaw.co.uk
+#  qualifications:
+#  image:
+#    url: /website/assets/images/headshots/
+#    alt:
 
-- name: Victoria Fletcher
-  position: Residential Development
-  contact:
-    telephone: 020
-    fax: 030
-    email: victoria.fletcher@northstarlaw.co.uk
-  qualifications:
-  image:
-    url: http://via.placeholder.com/300x300
-    alt:
+#- name: Victoria Fletcher
+#  position: Residential Development
+#  contact:
+#    telephone: 020
+#    fax: 030
+#    email: victoria.fletcher@northstarlaw.co.uk
+#  qualifications:
+#  image:
+#    url: /website/assets/images/headshots/
+#    alt:
 
 - name: Helen Smith
   position: Immigration Lawyer
@@ -92,7 +95,8 @@
     email: helen.smith@northstarlaw.co.uk
   qualifications:
   image:
-    url: http://via.placeholder.com/300x300
+    url: /website/assets/images/headshots/NorthStarLaw-HelenSmith-20180226-1840.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-HelenSmith-20180226-1840-2x.jpg
     alt:
 
 - name: Lesley Kemp
@@ -103,5 +107,42 @@
     email: lesley.kemp@northstarlaw.co.uk
   qualifications:
   image:
-    url: http://via.placeholder.com/300x300
+    url: /website/assets/images/headshots/NorthStarLaw-Lesley-20180226-1942.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-Lesley-20180226-1942-2x.jpg
+    alt:
+
+- name: Lucy Elbourne
+  position: Immigration Solicitor
+  contact:
+    telephone: 020
+    fax: 030
+    email: lucy.elbourne@northstarlaw.co.uk
+  qualifications:
+  image:
+    url: /website/assets/images/headshots/NorthStarLaw-LucyElbourne-20180226-1914.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-LucyElbourne-20180226-1914-2x.jpg
+    alt:
+
+- name: Nelli
+  position: Immigration Solicitor
+  contact:
+    telephone: 020
+    fax: 030
+    email: nelli@northstarlaw.co.uk
+  qualifications:
+  image:
+    url: /website/assets/images/headshots/NorthStarLaw-Nelli-20180226-1764.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-Nelli-20180226-1764-2x.jpg
+    alt:
+
+- name: Vickie
+  position: Immigration Solicitor
+  contact:
+    telephone: 020
+    fax: 030
+    email: vickie@northstarlaw.co.uk
+  qualifications:
+  image:
+    url: /website/assets/images/headshots/NorthStarLaw-Vickie-20180226-1880.jpg
+    url2: /website/assets/images/headshots/NorthStarLaw-Vickie-20180226-1880-2x.jpg
     alt:

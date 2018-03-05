@@ -2,10 +2,13 @@
   position: relative;
 
   @include tablet {
+    min-height: 400px;
     padding-left: 280px;
   }
 
   &__image {
+    max-width: 250px;
+
     @include tablet {
       position: absolute;
       top: 0;
@@ -37,8 +40,12 @@
       text-decoration: none;
     }
 
-    .icon-vcard {
+    .icon-user {
       color: color("blue");
+      float: left;
+      margin-right: 5px;
+      vertical-align: middle;
+      font-size: 1.5em;
     }
   }
 }
