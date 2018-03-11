@@ -3,6 +3,7 @@
 
   a {
     font-weight: $font-montserrat-regular;
+    color: color("blue");
 
     &:after {
       font-family: $icon-font;
