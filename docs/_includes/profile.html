@@ -14,16 +14,18 @@
   {{profile.name}}
 </div>
 
-
 <div class="team-member">
+  <h1 class="dn-m">{{ profile.name }}</h1>
+
   <img
     src="{{profile.image.url}}"
     alt=""
     class="team-member__image"
     srcset="{{profile.image.url2}} 2x"
   >
+
   <div class="team-member__body">
-    <h1>{{ profile.name }}</h1>
+    <span class="h1 db-ns">{{ profile.name }}</span>
 
     {% if profile.contact %}
     <ul class="team-member__contact-details">
@@ -52,3 +54,11 @@
     {% endif %}
   </div>
 </div>
+
+<div class="dn-ns">
+  <div class="section">
+    {% include star.html size="30" %}
+    <hr>
+  </div>
+</div>
+

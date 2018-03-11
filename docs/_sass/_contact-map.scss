@@ -1,10 +1,20 @@
-#map {
-  height: 502px;
-  border: 1px solid color("blue");
-  margin-bottom: 10px;
+.contact {
+  #map {
+    height: 300px;
+    border: 1px solid color("blue");
 
-  @include tablet {
-    margin-right: 70px;
-    margin-bottom: 0;
+    @include tablet {
+      height: 502px;
+      margin-right: 70px;
+    }
+  }
+
+  &__details {
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include tablet {
+      text-align: left;
+    }
   }
 }

@@ -4,11 +4,11 @@
 
   &__item {
     border: 1px solid;
-    border-color: color("light-grey");
+    border-color: color("gold");
     display: block;
-    box-shadow: 0 0 5px rgba(0,0,0, .8);
-    color: theme-color("primary");
+    color: color("blue");
     margin-bottom: 50px;
+    text-decoration: none;
 
     @include hover-focus {
       text-decoration: none;
@@ -29,6 +29,7 @@
   &__content {
     padding: 15px;
     position: relative;
+    background-color: color("light-grey");
 
     &:after {
       font-family: 'icomoon';
