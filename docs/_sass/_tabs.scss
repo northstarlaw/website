@@ -27,23 +27,31 @@
   }
 
   &__item {
+    display: flex;
     &--hidden {
       display: none;
     }
   }
 
   &__item-content {
-    padding: 20px;
-    border-top: 1px solid color("blue");
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include tablet {
+      border-top: 1px solid color("blue");
+      padding: 20px;
+    }
   }
 
   &__contact {
     font-family: $font-montserrat;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__contact-image {
-    max-width: 100%;
+    max-width: 150px;
+    width: 100%;
   }
 
   &__contact-name,
@@ -68,5 +76,50 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+
+  &__mobile-head {
+    margin: 0 -15px;
+
+    a {
+      border-bottom: 1px solid color("blue");
+      padding: 15px;
+      background: color("light-grey");
+      border-right: none;
+      border-left: none;
+      display: block;
+      color: color("grey");
+
+      @include hover-focus {
+        text-decoration: none;
+        color: color("grey");
+      }
+    }
+
+    .tabs__link--active {
+      background: color("blue");
+      color: color("light-grey");
+
+      @include hover-focus {
+        color: color("light-grey");
+      }
+
+      .icon-plus{
+        display: none;
+      }
+
+      .icon-minus {
+        display: block;
+      }
+    }
+
+    .icon-plus,
+    .icon-minus {
+      float: right;
+    }
+
+    .icon-minus {
+      display: none;
+    }
   }
 }

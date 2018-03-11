@@ -1,49 +1,35 @@
 .text {
-  &-right {
-    text-align: right;
-
-    @include tablet {
-      &-md {
-        text-align: right;
-      }
-    }
-
-    @include desktop {
-      &-lg {
-        text-align: right;
-      }
-    }
-  }
-
   &-left {
     text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-center {
+    text-align: center;
+  }
 
-    @include tablet {
-      &-md {
-        text-align: left;
-      }
+  @include tablet {
+    &-right-md {
+      text-align: right;
     }
-
-    @include desktop {
-      &-lg {
-        text-align: left;
-      }
+    &-left-md {
+      text-align: left;
+    }
+    &-center-md {
+      text-align: center;
     }
   }
 
-  &-center {
-    text-align: center;
-
-    @include tablet {
-      &-md {
-        text-align: center;
-      }
+  @include desktop {
+    &-right-lg {
+      text-align: right;
     }
-
-    @include desktop {
-      &-lg {
-        text-align: center;
-      }
+    &-left-lg {
+      text-align: left;
+    }
+    &-center-lg {
+      text-align: center;
     }
   }
 }
@@ -148,6 +134,19 @@
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+
+  @include tablet {
+    &-m {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  }
 }
 
 .hide {

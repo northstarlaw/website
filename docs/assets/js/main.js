@@ -123,24 +123,27 @@
     var tabEvents = {
       showActiveTab: function (args) {
         var id = args.id.replace(/^#/, '');
-        _(tabs).find('[href="#' + id + '"]').attr('aria-selected', true);
-        _(tabs).find('[href="#' + id + '"]').attr('title', 'Active tab');
+        var _activeTab = _tabs.find('[href="#' + id + '"]');
+        _activeTab.attr('aria-selected', true);
+        _activeTab.attr('title', 'Active tab');
         _('#' + id).attr('aria-hidden', 'false');
 
-        _(tabs).find('[href="#' + id + '"]').addClass(tabShowClass);
-        _(tabs).find('#' + id).removeClass(tabsHideClass);
+        _activeTab.addClass(tabShowClass);
+        _tabs.find('#' + id).removeClass(tabsHideClass);
 
         if(_banner && args.img && args.text) {
           _banner.style.backgroundImage = "url('" + args.img + "')";
         }
       },
       resetTabs: function (body, index) {
+        var _link = _('[href="#' + body.id + '"]');
         _(body).attr('aria-hidden', 'true');
-        _(_links[index]).attr('aria-selected', false);
-        _(_links[index]).attr('title', '');
+
+        _link.attr('aria-selected', false);
+        _link.attr('title', '');
 
         _(body).addClass(tabsHideClass);
-        _(_links[index]).removeClass(tabShowClass);
+        _link.removeClass(tabShowClass);
 
         if(index === _content.length - 1 && initialCall) {
           tabEvents.setInitialTab();
@@ -148,6 +151,11 @@
       },
       clickHandler: function (e) {
         e.preventDefault();
+
+        if(e.target.dataset.primaryTrigger) {
+          document.getElementById(e.target.dataset.primaryTrigger).click();
+          return;
+        }
 
         if(e.target.getAttribute('aria-selected') === 'false') {
           window.location.hash = e.target.hash;
@@ -177,11 +185,24 @@
       },
       bindClickEvent: function (link) {
         link.addEventListener('click', tabEvents.clickHandler);
+      },
+      preloadImages: function () {
+        var element = document.createElement('div');
+        element.className = 'sr-only';
+        document.body.append(element);
+
+        for (var i = 0; i < _links.length; i++) {
+          var image = new Image();
+          image.src = _links[i].dataset.img;
+          element.appendChild(image);
+        }
       }
     };
 
     _links.forEach(tabEvents.bindClickEvent);
     _content.forEach(tabEvents.resetTabs);
+
+    tabEvents.preloadImages();
   }
 
 })();

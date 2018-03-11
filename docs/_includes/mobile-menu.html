@@ -16,11 +16,11 @@
       </a>
 
       <ul class="list--unstyled dropdown mobile-menu__nav-dropdown dropdown">
-        <li class="hero__links-item"><a href="#">Dispute Resolution</a></li>
-        <li class="hero__links-item"><a href="#">Family & Matrimonial</a></li>
-        <li class="hero__links-item"><a href="#">Immigration</a></li>
-        <li class="hero__links-item"><a href="#">Property</a></li>
-        <li class="hero__links-item"><a href="#">Tax</a></li>
+        {% for department in site.data.departments %}
+        <li class="hero__links-item">
+          <a href="{{site.baseurl}}/what-we-do#{{department.title | slugify}}">{{department.title}}</a>
+        </li>
+        {% endfor %}
       </ul>
     </li>
     <li class="mobile-menu__nav-item">

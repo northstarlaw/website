@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-plus:before {
+  content: $icon-plus;
+}
 .icon-user:before {
   content: $icon-user;
 }

@@ -1,11 +1,10 @@
 ---
 title: What We Do - North Star Law
 layout: banner
-bannerUrl: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2850&q=80
-bannerExternal: true
+bannerUrl: /assets/images/dispute-resolution.jpeg
 ---
 
-<div class="grid">
+<div class="grid db-ns">
   <div class="col-4 h2">
     Our Departments
   </div>
@@ -14,7 +13,7 @@ bannerExternal: true
   </div>
 </div>
 <div class="tabs grid">
-  <div class="col-3">
+  <div class="col-3 db-ns">
     <aside>
       <h1 class="sr-only">Our Departments</h1>
       <div class="tabs__links list--unstyled" role="tablist">
@@ -34,18 +33,24 @@ bannerExternal: true
       </div>
     </aside>
   </div>
-  <div class="col-9">
+  <section class="col col-md-9">
     {% for department in site.data.departments %}
-    <section id="{{department.title | slugify}}" class="tabs__item grid" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
-      <div class="col-md-9 tabs__item-content">
-        <h2 class="sr-only">{{ department.title }}</h2>
+    <h2 class="sr-only-m tabs__mobile-head">
+      <a href="#{{ department.title | slugify }}" class="tabs__link" data-primary-trigger="{{department.title | slugify}}-tab">
+        {{ department.title }}
+        <span class="icon-plus"></span>
+        <span class="icon-minus"></span>
+      </a>
+    </h2>
+    <div id="{{department.title | slugify}}" class="tabs__item grid" role="tabpanel" aria-labelledby="{{department.title | slugify}}-tab">
+      <div class="col col-md-9 tabs__item-content">
         {{department.description}}
       </div>
-      <div class="col-md-3">
+      <div class="col col-md-3">
         {% if department.contacts %}
           <h3 class="sr-only">Key Contacts</h3>
           {% for contact in department.contacts %}
-            <div class="tabs__contact">
+            <div class="tabs__contact text-center text-left-md">
               <img class="tabs__contact-image" src="{{ contact.image.url }}" alt="{{ contact.image.alt }}">
               <div class="tabs__contact-body">
                 <h4 class="tabs__contact-name">{{ contact.name }}</h4>
@@ -60,9 +65,9 @@ bannerExternal: true
           {% endfor %}
         {% endif %}
       </div>
-    </section>
+    </div>
     {% endfor %}
-  </div>
+  </section>
 </div>
 
 <div class="dn-ns">

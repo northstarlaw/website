@@ -123,3 +123,51 @@ hr {
   padding-top: 56px;
   margin-bottom: 85px;
 }
+
+.dn {
+  display: none;
+
+  @include tablet {
+    &-m {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    &-l {
+      display: none;
+    }
+  }
+}
+
+.db {
+  display: block;
+
+  @include tablet {
+    &-m {
+      display: block;
+    }
+  }
+
+  @include desktop {
+    &-l {
+      display: block;
+    }
+  }
+}
+
+.dib {
+  display: inline-block;
+
+  @include tablet {
+    &-m {
+      display: inline-block;
+    }
+  }
+
+  @include desktop {
+    &-l {
+      display: inline-block;
+    }
+  }
+}
