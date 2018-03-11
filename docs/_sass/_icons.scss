@@ -39,6 +39,11 @@
 .icon-chevron:before {
   content: $icon-chevron;
 }
-.icon-close:before {
-  content: $icon-close;
+
+.icon-plus:before {
+  content: $icon-plus;
 }
+.icon-minus:before {
+  content: $icon-minus;
+}
+

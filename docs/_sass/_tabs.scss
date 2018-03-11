@@ -61,6 +61,7 @@
     font-size: $font-small;
     font-weight: $font-montserrat-light;
   }
+
   &__contact-link {
     color: color("gold");
     text-decoration: underline;
@@ -82,17 +83,22 @@
     margin: 0 -15px;
 
     a {
+      border: none;
       border-bottom: 1px solid color("blue");
       padding: 15px;
       background: color("light-grey");
-      border-right: none;
-      border-left: none;
       display: block;
       color: color("grey");
 
       @include hover-focus {
         text-decoration: none;
         color: color("grey");
+      }
+    }
+
+    &:first-child {
+      a {
+        border-top: 1px solid color("blue");
       }
     }
 
@@ -116,6 +122,7 @@
     .icon-plus,
     .icon-minus {
       float: right;
+      margin-top: 3px;
     }
 
     .icon-minus {
