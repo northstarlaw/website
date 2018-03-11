@@ -208,3 +208,27 @@
     }
   }
 }
+
+.df {
+  display: flex;
+
+  &-ns {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  @include tablet {
+    &-m {
+      display: flex;
+    }
+  }
+
+  @include desktop {
+    &-l {
+      display: flex;
+    }
+  }
+}
