@@ -48,6 +48,7 @@
   color: color("light-grey");
   display: inline-block;
   transition: color .3s ease, border-color .3s ease;
+  text-decoration: none;
 
   @include hover-focus {
     color: color("gold");

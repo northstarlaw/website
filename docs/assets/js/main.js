@@ -82,8 +82,8 @@
           });
         default:
           trigger.addEventListener(method, function(e) {
+            e.preventDefault();
             if(_(mod)[0].getAttribute('aria-expanded') === 'false') {
-              e.preventDefault();
               _(mod)[0].setAttribute('aria-expanded', 'true')
               addWindowClick();
             } else {
