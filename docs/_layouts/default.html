@@ -6,9 +6,9 @@
     {% include head.html %}
   </head>
   {% if page.url == '/' %}
-  <body class="header-transparent banner-template">
+  <body class="header-transparent banner-template" itemscope itemtype="http://schema.org/LegalService">
   {% else %}
-  <body>
+  <body itemscope itemtype="http://schema.org/LegalService">
   {% endif %}
 
     {% include header.html %}

@@ -24,9 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plus:before {
-  content: $icon-plus;
-}
+
 .icon-user:before {
   content: $icon-user;
 }
@@ -39,7 +37,9 @@
 .icon-chevron:before {
   content: $icon-chevron;
 }
-
+.icon-close:before {
+  content: $icon-close;
+}
 .icon-plus:before {
   content: $icon-plus;
 }
