@@ -14,6 +14,16 @@
     }
   }
 
+  .link-gold {
+    color: color("gold");
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
   &__first-row {
     margin-bottom: 50px;
   }
