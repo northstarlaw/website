@@ -5,13 +5,13 @@
   height: 100%;
   width: 100%;
   background: color("blue");
-  z-index: 2;
   opacity: 0;
   transition: left 0.3s ease-out, opacity 0.3s ease-out;
   padding: 28px;
   padding-top: 74px;
   color: color("white");
   overflow-y: scroll;
+  z-index: 5;
 
   a {
     color: color("light-grey");
