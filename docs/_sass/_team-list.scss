@@ -7,11 +7,16 @@
     border-color: color("gold");
     display: block;
     color: color("blue");
-    margin-bottom: 50px;
+    margin: 10px;
     text-decoration: none;
 
     @include hover-focus {
       text-decoration: none;
+    }
+
+    @include tablet {
+      margin: 0;
+      margin-bottom: 50px;
     }
 
     &:focus {
@@ -27,7 +32,7 @@
   }
 
   &__content {
-    padding: 15px;
+    padding: 5px;
     position: relative;
     background-color: color("light-grey");
 
@@ -40,7 +45,14 @@
       right: 10px;
       top: 50%;
       transform: translate(0, -50%);
-      font-size: 2rem;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+    }
+
+    @include tablet {
+      padding: 15px;
     }
   }
 
@@ -52,5 +64,12 @@
   &__position {
     display: block;
     font-weight: $font-montserrat-regular;
+  }
+
+  &__email {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
   }
 }

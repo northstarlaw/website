@@ -16,14 +16,14 @@ layout: default
 <div class="team-list">
   <div class="grid">
     {% for member in site.data.people %}
-    <div class="col col-lg-4 col-md-6">
+    <div class="col-6 col-lg-4 col-md-6">
       <a href="{{site.baseurl}}/team/{{ member.name | slugify }}" class="team-list__item" itemprop="employee" itemscope itemtype="http://schema.org/Person">
         <img class="team-list__image" src="{{ member.image.url }}" alt="" srcset="{{ member.image.url2 }}" itemprop="image">
         <div class="team-list__content">
           <div class="team-list__title" itemprop="name">{{ member.name }}</div>
           <small class="team-list__subtitles">
             <span class="team-list__position" itemprop="jobTitle">{{ member.position }}</span>
-            <span itemprop="email">{{ member.contact.email }}</span>
+            <span itemprop="email" class="team-list__email">{{ member.contact.email }}</span>
           </small>
         </div>
       </a>

@@ -78,6 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  image_optim
   jekyll (~> 3.7.0)
   jekyll-compress-images
   jekyll-feed (~> 0.6)
