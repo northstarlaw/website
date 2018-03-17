@@ -4,13 +4,13 @@
   d.documentElement.className =
     d.documentElement.className.replace('no-js', 'js');
 
-  var _bodyHome = _('.header-transparent');
   var _header = _('.header');
   var _hero = _('.hero')
   var _tabs = _('.tabs');
   var _mobileMenuOpenButton = _('.js-mobile-menu-button');
   var _mobileMenuCloseButton = _('.js-mobile-menu-close');
   var _dropdowns = _('.js-dropdown');
+  var _scrollers = _('[data-scrollTo]');
 
   function findAncestor (el, cls) {
     while ((el = el.parentElement) && !el.classList.contains(cls));
@@ -39,9 +39,18 @@
     })
   }
 
-  if (_bodyHome) {
-    window.addEventListener('scroll', function() {
-      _bodyHome.toggleClass('header-transparent', _hero && window.scrollY < (_hero[0].offsetHeight - _header[0].offsetHeight));
+  if (_scrollers) {
+    _scrollers.forEach(function (scroller) {
+      var target = _(scroller.hash);
+      scroller.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        window.scroll({
+          top: target[0].offsetTop - _header[0].clientHeight,
+          left: 0,
+          behavior: 'smooth'
+        });
+      });
     })
   }
 
@@ -92,14 +101,6 @@
             }
           });
       }
-
-      // _links[0].addEventListener('focus', function(e) {
-      //   _(mod).addClass('dropdown--show');
-      // });
-
-      // _links[_links.length - 1].addEventListener('blur', function(e) {
-      //   _(mod).removeClass('dropdown--show');
-      // });
 
       window.addEventListener('keyup', function (e) {
         if(e.keyCode === 27 && _('[aria-expanded="true"]')) {

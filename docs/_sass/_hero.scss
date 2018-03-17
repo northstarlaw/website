@@ -21,6 +21,11 @@
     text-shadow: 0px 0px 10px #000000, 0px 0px 10px #000000;
   }
 
+  &__link {
+    color: color("white");
+    text-decoration: none;
+  }
+
   &__section {
     font-size: 20px;
     background: color("blue");
