@@ -7,6 +7,7 @@
     telephone: 0203 355 9613
     mobile: 0776 916 7019
     email: bm@northstarlaw.co.uk
+  linkedin: https://www.linkedin.com/in/benedikte-malling-bech-42848a/
   vcard: link/to/vcard
   qualifications:
     - Admitted to the New York Bar 2006
@@ -25,6 +26,7 @@
     telephone: 020
     fax: 030
     email: alex.blain@northstarlaw.co.uk
+  linkedin: https://www.linkedin.com/in/alexander-blain-b36971137/
   qualifications:
   image:
     url: /website/assets/images/headshots/NorthStarLaw-AlexBlain-20180226-1975.jpg
@@ -77,6 +79,7 @@
     mobile: 0771 474 4354
     email: lesley.kemp@northstarlaw.co.uk
     Twitter: '@NorthStarlmmig'
+  linkedin: https://www.linkedin.com/in/lesley-kemp-1a4811bb/
   qualifications:
     - Admitted as a Solicitor in England and Wales, February 1989
     - College of Law, Chancery Lane, London (CPE 1985) (Solicitors' Finals) 1986
@@ -99,12 +102,13 @@
     url2: /website/assets/images/headshots/NorthStarLaw-LucyElbourne-20180226-1914-2x.jpg
     alt:
 
-- name: Nelli
+- name: Nelli Shevchenko
   position: Immigration Solicitor
   contact:
     telephone: 020
     fax: 030
-    email: nelli@northstarlaw.co.uk
+    email: ns@northstarlaw.co.uk
+  linkedin: https://www.linkedin.com/in/nelli-in-law/
   qualifications:
   image:
     url: /website/assets/images/headshots/NorthStarLaw-Nelli-20180226-1764.jpg

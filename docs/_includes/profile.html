@@ -30,9 +30,20 @@
     {% if profile.contact %}
     <ul class="team-member__contact-details">
       {% for contactMethod in profile.contact %}
-      <li><span class="team-member__contact-method">{{contactMethod[0]}}:</span> {{contactMethod[1]}}</li>
+      <li>
+          <span class="team-member__contact-method">{{contactMethod[0]}}:</span> {{contactMethod[1]}}
+      </li>
       {% endfor %}
     </ul>
+    {% endif %}
+
+    {% if profile.linkedin %}
+    <p>
+      <a href="{{profile.linkedin}}" target="_blank" class="team-member__link">
+        <span class="icon-linkedin"></span>
+        LinkedIn
+      </a>
+    </p>
     {% endif %}
 
     {% if profile.vcard %}

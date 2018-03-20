@@ -14,16 +14,6 @@
     }
   }
 
-  .link-gold {
-    color: color("white");
-    text-decoration: underline;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
   &__first-row {
     margin-bottom: 50px;
   }
