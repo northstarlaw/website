@@ -24,13 +24,14 @@
   &__link {
     color: color("white");
     text-decoration: none;
+    padding: 20px;
+    display: inline-block;
   }
 
   &__section {
     font-size: 20px;
     background: color("blue");
     color: color("light-grey");
-    padding: 20px;
   }
 }
 
