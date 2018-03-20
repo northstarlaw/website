@@ -12,8 +12,8 @@
   var _dropdowns = _('.js-dropdown');
   var _scrollers = _('[data-scrollTo]');
 
-  function findAncestor (el, cls) {
-    while ((el = el.parentElement) && !el.classList.contains(cls));
+  function findAncestor (el, sel) {
+    while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,sel)));
     return el;
   }
 
@@ -61,7 +61,7 @@
 
       var windowClickHandler = function (e) {
         if (e.target === trigger) return;
-        if(!findAncestor(e.target, 'dropdown') && _('[aria-expanded="true"]')) {
+        if(!findAncestor(e.target, '.js-dropdown') && _('[aria-expanded="true"]')) {
           _('[aria-expanded="true"]').forEach(function (dropdown) {
             dropdown.setAttribute('aria-expanded', 'false');
           });
@@ -92,11 +92,12 @@
         default:
           trigger.addEventListener(method, function(e) {
             e.preventDefault();
-            if(_(mod)[0].getAttribute('aria-expanded') === 'false') {
-              _(mod)[0].setAttribute('aria-expanded', 'true')
+            if(e.currentTarget.getAttribute('aria-expanded') === 'false') {
+              e.currentTarget.setAttribute('aria-expanded', 'true')
               addWindowClick();
             } else {
-              _(mod)[0].setAttribute('aria-expanded', 'false')
+              console.log(e.currentTarget.getAttribute('aria-expanded') )
+              e.currentTarget.setAttribute('aria-expanded', 'false')
               removeWindowClick();
             }
           });
