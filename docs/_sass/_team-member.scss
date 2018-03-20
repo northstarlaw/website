@@ -17,19 +17,6 @@
     }
   }
 
-  &__link {
-    color: color("blue");
-    text-decoration: none;
-
-    @include hover-focus {
-      color: color("gold");
-    }
-
-    [class~="icon"] {
-      float: left;
-    }
-  }
-
   &__contact-details {
     list-style: none;
     padding: 0;
@@ -53,7 +40,7 @@
       text-decoration: none;
     }
 
-    .icon-user {
+    [class^="icon"] {
       color: color("blue");
       float: left;
       margin-right: 5px;
