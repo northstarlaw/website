@@ -15,7 +15,7 @@
   }
 
   .link-gold {
-    color: color("gold");
+    color: color("white");
     text-decoration: underline;
 
     &:hover,
@@ -63,7 +63,7 @@
   &__image-large {
     display: none;
     width: 267px;
-    
+
     @include tablet {
       display: inline;
     }
