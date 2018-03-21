@@ -56,7 +56,8 @@
 								'theme_location' => 'menu-1',
 								'menu_id'        => 'primary-menu',
 								'menu_class' => 'header__nav list--unstyled',
-								'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+								'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+								'walker'     => new WPDocs_Walker_Nav_Menu()
 							) );
 						?>
 	        </div>

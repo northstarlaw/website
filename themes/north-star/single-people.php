@@ -14,6 +14,12 @@ get_header(); ?>
         <?php
         while ( have_posts() ) : the_post(); ?>
 
+          <div class="breadcrumb">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+            <a href="<?php the_permalink(get_page_by_title('The Team')->ID); ?>">Team</a>
+            <?php the_title(); ?>
+          </div>
+
           <div class="team-member">
             <h1 class="dn-m"><?php the_title(); ?></h1>
 

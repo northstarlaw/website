@@ -16,7 +16,6 @@ get_header(); ?>
 
     <div class="banner" style="background-image: url()"></div>
 
-
     <div class="container">
 		<main>
 
@@ -111,13 +110,8 @@ get_header(); ?>
         </div>
 
         <div class="dn-ns">
-          <div class="section">
-            {% include star.html size="30" %}
-            <hr>
-          </div>
+          <?php get_template_part('partials/star', 'separator') ?>
         </div>
-
-
 
 			<?php endwhile; /* End of the loop. */
 			?>

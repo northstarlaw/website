@@ -33,7 +33,7 @@
     }
   }
 
-  .header__nav-item--active, .current_page_item  {
+  .header__nav-item--active, .current_page_item, .current-menu-parent  {
     > a {
       color: color("gold");
     }

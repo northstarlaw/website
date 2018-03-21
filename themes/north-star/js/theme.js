@@ -118,7 +118,7 @@
     var tabsHideClass = 'tabs__item--hidden';
     var tabShowClass = 'tabs__link--active';
     var initialCall = true;
-    var _links = _(tabs).find('.tabs__link[id]');
+    var _links = _(tabs).find('.tabs__link');
     var _content = _(tabs).find('.tabs__item');
     var _banner = _('.banner')[0];
 

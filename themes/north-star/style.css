@@ -883,7 +883,7 @@ hr {
       color: #d7b377; }
       .header a:hover .star-logo, .header a:focus .star-logo {
         fill: #d7b377; }
-  .header .header__nav-item--active > a, .header .current_page_item  > a {
+  .header .header__nav-item--active > a, .header .current_page_item  > a, .current-menu-parent > a {
     color: #d7b377; }
   .header__nav {
     list-style: none;
@@ -1294,7 +1294,7 @@ hr {
   display: inline-block;
   vertical-align: middle;
   transition: transform .3s ease;
-  margin-left: 5px; }
+  margin-left: 10px; }
 
 .breadcrumb {
   margin-bottom: 2rem; }
