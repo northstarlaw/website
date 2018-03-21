@@ -1,0 +1,7 @@
+.bp-phone:before {
+  display: none!important;
+}
+
+.bp-contact-card>div {
+  margin: 0!important;
+}

@@ -45,7 +45,26 @@ if ( ! function_exists( 'north_star_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'north-star' ),
+			'menu-2' => esc_html__( 'Footer', 'north-star' ),
 		) );
+
+
+		function atg_menu_classes($items, $args) {
+		  if($args->menu->slug == 'header-menu') {
+        foreach ( $items as $item ) {
+            $item->classes[] = 'header__nav-item';
+        }
+      }
+
+      if($args->menu->slug == 'mobile-menu') {
+        foreach ( $items as $item ) {
+          $item->classes[] = 'mobile-menu__nav-item';
+//          nav-link
+        }
+      }
+      return $items;
+		}
+		add_filter('wp_nav_menu_objects','atg_menu_classes',1,3);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -113,15 +132,23 @@ function north_star_widgets_init() {
 }
 add_action( 'widgets_init', 'north_star_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
 function north_star_scripts() {
+
 	wp_enqueue_style( 'north-star-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'wordpress-overrides', get_template_directory_uri() . '/css/wordpress-overrides.css');
 
 	wp_enqueue_script( 'north-star-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'north-star-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'underscore-helpers', get_template_directory_uri() . '/js/underscore-helpers.js', array(), '1', true );
+
+	wp_enqueue_script( 'north-star-scripts', get_template_directory_uri() . '/js/theme.js', array('underscore-helpers'), '1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -156,3 +183,123 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function remove_menus(){
+
+  // remove_menu_page( 'index.php' );                  //Dashboard
+  // remove_menu_page( 'jetpack' );                    //Jetpack*
+  remove_menu_page( 'edit.php' );                   //Posts
+  // remove_menu_page( 'upload.php' );                 //Media
+  // remove_menu_page( 'edit.php?post_type=page' );    //Pages
+  remove_menu_page( 'edit-comments.php' );          //Comments
+  // remove_menu_page( 'themes.php' );                 //Appearance
+  // remove_menu_page( 'plugins.php' );                //Plugins
+  // remove_menu_page( 'users.php' );                  //Users
+  // remove_menu_page( 'tools.php' );                  //Tools
+  // remove_menu_page( 'options-general.php' );        //Settings
+
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
+function custom_post_type() {
+
+    $labels = array(
+        'name'                => _x( 'People', 'Post Type General Name', 'north-star' ),
+        'singular_name'       => _x( 'Person', 'Post Type Singular Name', 'north-star' ),
+        'menu_name'           => __( 'People', 'north-star' ),
+//        'parent_item_colon'   => __( 'Parent Movie', 'north-star' ),
+        'all_items'           => __( 'All People', 'north-star' ),
+        'view_item'           => __( 'View Person', 'north-star' ),
+        'add_new_item'        => __( 'Add New Person', 'north-star' ),
+        'add_new'             => __( 'Add New', 'north-star' ),
+        'edit_item'           => __( 'Edit Person', 'north-star' ),
+        'update_item'         => __( 'Update Person', 'north-star' ),
+        'search_items'        => __( 'Search Person', 'north-star' ),
+        'not_found'           => __( 'Not Found', 'north-star' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'north-star' ),
+    );
+
+    $args = array(
+        'label'               => __( 'people', 'north-star' ),
+        'description'         => __( 'People and Employees', 'north-star' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        'taxonomies'          => array( 'genres' ),
+        'rewrite'             => array('slug' => 'team'),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 20,
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+        'menu_icon'           => 'dashicons-id'
+    );
+
+    // Registering your Custom Post Type
+    register_post_type( 'people', $args );
+
+    $labels = array(
+            'name'                => _x( 'Departments', 'Post Type General Name', 'north-star' ),
+            'singular_name'       => _x( 'Department', 'Post Type Singular Name', 'north-star' ),
+            'menu_name'           => __( 'Departments', 'north-star' ),
+    //        'parent_item_colon'   => __( 'Parent Movie', 'north-star' ),
+            'all_items'           => __( 'All Departments', 'north-star' ),
+            'view_item'           => __( 'View Department', 'north-star' ),
+            'add_new_item'        => __( 'Add New Department', 'north-star' ),
+            'add_new'             => __( 'Add New', 'north-star' ),
+            'edit_item'           => __( 'Edit Department', 'north-star' ),
+            'update_item'         => __( 'Update Department', 'north-star' ),
+            'search_items'        => __( 'Search Department', 'north-star' ),
+            'not_found'           => __( 'Not Found', 'north-star' ),
+            'not_found_in_trash'  => __( 'Not found in Trash', 'north-star' ),
+        );
+
+        $args = array(
+            'label'               => __( 'departments', 'north-star' ),
+            'description'         => __( 'Departments', 'north-star' ),
+            'labels'              => $labels,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions'),
+            // You can associate this CPT with a taxonomy or custom taxonomy.
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */
+            'hierarchical'        => false,
+            'public'              => false,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 20,
+            'can_export'          => true,
+            'has_archive'         => false,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'page',
+            'menu_icon'           => 'dashicons-networking'
+        );
+
+        // Registering your Custom Post Type
+        register_post_type( 'departments', $args );
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not
+* unnecessarily executed.
+*/
+
+add_action( 'init', 'custom_post_type', 0 );

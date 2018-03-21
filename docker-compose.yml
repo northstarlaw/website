@@ -19,6 +19,7 @@ services:
      volumes:
        - ./themes:/var/www/html/wp-content/themes
        - ./plugins:/var/www/html/wp-content/plugins
+       - ./media:/var/www/html/wp-content/uploads
      ports:
        - "8000:80"
      restart: always

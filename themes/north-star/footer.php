@@ -13,20 +13,63 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'north-star' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'north-star' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'north-star' ), 'north-star', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<footer>
+    <section class="footer">
+      <div class="container">
+
+        <img src="<?= get_template_directory_uri(); ?>/assets/white-logo.png" alt="" class="footer__image-small">
+        <div class="grid">
+          <div class="col col-md footer__row">
+            <nav>
+              <?php
+                wp_nav_menu( array(
+                  'theme_location' => 'menu-2',
+                  'menu_id'        => 'footer-menu',
+                  'menu_class' => 'list--unstyled footer__pages',
+                  'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+                ) );
+              ?>
+            </nav>
+          </div>
+          <div class="col col-md text-right-md footer__row">
+            <?= do_shortcode('[contact-card show_name=0 show_get_directions=0 show_email=0 show_phone=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?>
+
+            <ul class="list--unstyled footer__row">
+              <li><tel itemprop="telephone"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></tel></li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid footer__meta">
+          <div class="col col-md-8 flex--self-end-md">
+            © <?= date('Y'); ?> <?= get_bloginfo('name'); ?><br>
+            <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Legal and Regulatory' ) ) ); ?>">
+              Legal and Regulatory Information
+            </a>
+          </div>
+          <div class="col-md-4 text-right">
+            <img src="<?= get_template_directory_uri(); ?>/assets/white-logo.png" class="footer__image-large" itemprop="logo">
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+  <div class="mobile-menu">
+    <button class="js-mobile-menu-close mobile-menu__close icon-close" type="button">
+      <span class="sr-only">Close</span>
+    </button>
+
+    <?php
+      wp_nav_menu( array(
+        'theme_location' => 'menu-1',
+        'menu_id'        => 'mobile-menu',
+        'menu_class' => 'list--unstyled',
+        'items_wrap' => '<ul class="%2$s">%3$s</ul>'
+      ) );
+    ?>
+  </div>
+
+
 
 <?php wp_footer(); ?>
 
