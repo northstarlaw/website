@@ -1,0 +1,28 @@
+{
+  "name": "northstar",
+  "version": "1.0.0",
+  "description": "## To Run Prototype",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run watch-css",
+    "sass": "node-sass --include-path sass sass/main.scss themes/north-star/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run sass\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northstarlaw/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northstarlaw/website/issues"
+  },
+  "homepage": "https://github.com/northstarlaw/website#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

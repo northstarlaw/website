@@ -13,6 +13,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 @charset "UTF-8";
+
 /*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -473,6 +474,7 @@ template {
       .col-md-10 {
         flex: 0 0 83.33%;
         max-width: 83.33%; } }
+
 @media (min-width: 1024px) {
   .col-lg, .col-lg-4, .col-lg-6, .col-lg-8 {
     padding-right: 10px;
@@ -502,6 +504,7 @@ template {
     .col-lg-10 {
       flex: 0 0 83.33%;
       max-width: 83.33%; } }
+
 @media (min-width: 1280px) {
   .col-xl, .col-xl-6, .col-xl-4, .col-xl-8 {
     padding-right: 10px;
@@ -531,8 +534,10 @@ template {
     .col-xl-10 {
       flex: 0 0 83.33%;
       max-width: 83.33%; } }
+
 @-ms-viewport {
   width: device-width; }
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -670,10 +675,13 @@ hr {
 
 .text-left {
   text-align: left; }
+
 .text-right {
   text-align: right; }
+
 .text-center {
   text-align: center; }
+
 @media (min-width: 768px) {
   .text-right-md {
     text-align: right; }
@@ -681,6 +689,7 @@ hr {
     text-align: left; }
   .text-center-md {
     text-align: center; } }
+
 @media (min-width: 1024px) {
   .text-right-lg {
     text-align: right; }
@@ -811,6 +820,7 @@ hr {
   list-style: none;
   margin: 0;
   padding: 0; }
+
 .list--inline > li {
   float: left;
   display: inline;
@@ -822,6 +832,7 @@ hr {
   src: url("../fonts/icomoon.eot?1rxdyz#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?1rxdyz") format("truetype"), url("../fonts/icomoon.woff?1rxdyz") format("woff"), url("../fonts/icomoon.svg?1rxdyz#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
@@ -883,7 +894,7 @@ hr {
       color: #d7b377; }
       .header a:hover .star-logo, .header a:focus .star-logo {
         fill: #d7b377; }
-  .header .header__nav-item--active > a, .header .current_page_item  > a, .current-menu-parent > a {
+  .header .header__nav-item--active > a, .header .current_page_item > a {
     color: #d7b377; }
   .header__nav {
     list-style: none;
@@ -1016,6 +1027,7 @@ hr {
   to {
     transform: translate(0);
     opacity: 1; } }
+
 .footer {
   background: #0d2333;
   color: #e6e6e6;
@@ -1083,10 +1095,12 @@ hr {
       color: #4a4a4a;
       text-decoration: none;
       cursor: none; }
+
 .tabs__item {
   display: flex; }
   .tabs__item--hidden {
     display: none; }
+
 .tabs__item-content {
   padding-top: 15px;
   padding-bottom: 15px; }
@@ -1094,18 +1108,22 @@ hr {
     .tabs__item-content {
       border-top: 1px solid #0d2333;
       padding: 20px; } }
+
 .tabs__contact {
   font-family: "Montserrat", sans-serif;
   margin-left: auto;
   margin-right: auto; }
+
 .tabs__contact-image {
   max-width: 150px;
   width: 100%; }
+
 .tabs__contact-name, .tabs__contact-position {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 300; }
+
 .tabs__contact-link {
   color: #d7b377;
   text-decoration: underline;
@@ -1113,10 +1131,12 @@ hr {
   display: inline-block; }
   .tabs__contact-link:hover, .tabs__contact-link:focus {
     text-decoration: none; }
+
 .tabs__contact-email {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
+
 .tabs__mobile-head {
   margin: 0 -15px; }
   .tabs__mobile-head a {
@@ -1182,15 +1202,27 @@ hr {
     display: block;
     color: #0d2333;
     margin: 10px;
-    text-decoration: none; }
+    text-decoration: none;
+    position: relative; }
     .team-list__item:hover, .team-list__item:focus {
       text-decoration: none; }
     @media (min-width: 768px) {
       .team-list__item {
         margin: 0;
         margin-bottom: 50px; } }
-    .team-list__item:focus {
-      outline: 2px solid #0d2333; }
+    .team-list__item:after {
+      content: "";
+      display: block;
+      background-color: #0d2333;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transistion: opacity 1s ease; }
+    .team-list__item:focus:after {
+      opacity: 0.1; }
   .team-list__image {
     display: block;
     max-width: 100%;
@@ -1246,9 +1278,9 @@ hr {
     text-decoration: none;
     display: inline-block;
     font-weight: 400; }
-  .mobile-menu__nav-item {
+  .mobile-menu li {
     margin-bottom: 40px; }
-    .mobile-menu__nav-item > a {
+    .mobile-menu li > a {
       font-size: 20px; }
   .mobile-menu__nav-dropdown li {
     margin-top: 25px; }
@@ -1287,14 +1319,16 @@ hr {
 .dropdown-link[aria-expanded="true"] + .dropdown {
   opacity: 1;
   visibility: visible; }
+
 .dropdown-link[aria-expanded="true"] .dropdown__icon {
   transform: rotate(90deg); }
+
 .dropdown-link .dropdown__icon {
   transform: rotate(-90deg);
   display: inline-block;
   vertical-align: middle;
   transition: transform .3s ease;
-  margin-left: 10px; }
+  margin-left: 5px; }
 
 .breadcrumb {
   margin-bottom: 2rem; }
@@ -1412,6 +1446,7 @@ hr {
     left: -100%; }
   100% {
     left: 0; } }
+
 @keyframes background-out {
   0% {
     left: 0;
@@ -1419,11 +1454,13 @@ hr {
   100% {
     left: 100%;
     opacity: 0; } }
+
 @keyframes fade-in {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 .what-we-do {
   height: 465px;
   color: #e6e6e6;

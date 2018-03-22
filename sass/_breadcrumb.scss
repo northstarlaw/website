@@ -1,0 +1,17 @@
+.breadcrumb {
+  margin-bottom: $spacer * 2;
+
+  a {
+    font-weight: $font-montserrat-regular;
+    color: color("blue");
+
+    &:after {
+      font-family: $icon-font;
+      content: $icon-chevron;
+      display: inline-block;
+      font-size: $icon-small;
+      margin: 0 5px 0 7px;
+      vertical-align: middle;
+    }
+  }
+}

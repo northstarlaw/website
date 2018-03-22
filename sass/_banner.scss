@@ -1,0 +1,13 @@
+.banner {
+  height: $banner-height;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  &__header {
+    text-align: center;
+    background-color: rgba(0,0,0, 0.5);
+    color: #ffffff;
+  }
+}

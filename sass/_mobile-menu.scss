@@ -1,0 +1,76 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: color("blue");
+  opacity: 0;
+  transition: left 0.3s ease-out, opacity 0.3s ease-out;
+  padding: 28px;
+  padding-top: 74px;
+  color: color("white");
+  overflow-y: scroll;
+  z-index: 5;
+
+  a {
+    color: color("light-grey");
+    text-decoration: none;
+    display: inline-block;
+    font-weight: $font-montserrat-regular;
+  }
+
+  li {
+    margin-bottom: 40px;
+
+    > a {
+      font-size: $font-large;
+    }
+  }
+
+  &__nav-dropdown {
+    li {
+      margin-top: 25px;
+    }
+
+    a {
+      font-size: $font-normal;
+      padding: 10px 0;
+      font-weight: $font-montserrat-light;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 20px;
+    padding-right: 5px;
+    font-size: 2em;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  [aria-expanded="true"] {
+    + .dropdown {
+      display: block;
+    }
+  }
+}
+
+.mobile-menu-show {
+  overflow: hidden;
+  height: 100%;
+
+  .mobile-menu {
+    left: 0;
+    opacity: 1;
+
+    @include tablet {
+      left: -100%;
+      opacity: 0;
+    }
+  }
+}

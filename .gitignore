@@ -1,6 +1,7 @@
 .idea/
 .git/
 data/
+node_modules
 
 prototype/node_modules
 docs/_site

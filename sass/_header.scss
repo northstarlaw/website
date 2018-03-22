@@ -1,0 +1,107 @@
+.header {
+  &__group {
+    padding-top: 70px;
+  }
+
+  background-color: color("blue");
+  color: color("light-grey");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  font-size: 2rem;
+  padding: 10px 15px;
+
+  &__logo {
+    display: block;
+    float: left;
+  }
+
+  a {
+    color: color("light-grey");
+    font-size: $nav-font-size;
+    font-family: $nav-font-family;
+    text-decoration: none;
+
+    @include hover-focus {
+      color: color("gold");
+
+      .star-logo {
+        fill: color("gold");
+      }
+    }
+  }
+
+  .header__nav-item--active, .current_page_item  {
+    > a {
+      color: color("gold");
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    float: right;
+
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__mobile-nav {
+    float: right;;
+    padding-right: 0;
+    color: color("light-grey");
+
+    @include tablet {
+      padding: 15px;
+      display: none;
+    }
+  }
+
+  &__nav-item {
+    display: inline-block;
+    float: left;
+    position: relative;
+
+    > a {
+      display: block;
+      margin: 15px;
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    background: color("blue");
+    box-shadow: 0 5px 5px rgba(0,0,0,.5);
+    font-size: $font-small;
+    padding: 10px 20px;
+    right: -100px;
+    left: 0px;
+
+    a {
+      padding-bottom: 10px;
+      font-size: $body-font-size-mobile;
+      display: inline-block;
+
+      @include hover-focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__nav-wrap {
+    flex-grow: 1;
+    font-size: 1.5rem;
+  }
+
+  .star-logo {
+    fill: color("light-grey");
+    transition: fill .3s ease;
+  }
+}

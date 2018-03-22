@@ -1,0 +1,64 @@
+.team-member {
+  position: relative;
+
+  @include tablet {
+    min-height: 400px;
+    padding-left: 280px;
+  }
+
+  &__image {
+    max-width: 250px;
+
+    @include tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: $spacer;
+    }
+  }
+
+  &__link {
+    color: color("blue");
+    text-decoration: none;
+
+    @include hover-focus {
+      color: color("gold");
+    }
+
+    [class~="icon"] {
+      float: left;
+    }
+  }
+
+  &__contact-details {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul {
+    margin-bottom: $spacer;
+  }
+
+  &__contact-method {
+    font-weight: $font-montserrat-regular;
+  }
+
+  &__vcard {
+    color: color("gold");
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 15px;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    .icon-user {
+      color: color("blue");
+      float: left;
+      margin-right: 5px;
+      vertical-align: middle;
+      font-size: 1.5em;
+    }
+  }
+}

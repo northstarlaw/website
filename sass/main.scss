@@ -1,0 +1,42 @@
+/*!
+Theme Name: north-star
+Author: Sam Gregory & Suzannah James
+Description: law website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: north-star
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@charset "UTF-8";
+
+@import "variables";
+@import "mixins";
+
+@import "normalize";
+@import "grid";
+
+@import "base";
+@import "utilities";
+@import "lists";
+@import "icons";
+
+// Components
+@import "header";
+@import "buttons";
+@import "hero";
+@import "footer";
+@import "tabs";
+@import "banner";
+@import "contact-map";
+@import "team-list";
+@import "mobile-menu";
+@import "dropdown";
+@import "breadcrumb";
+@import "team-member";
+@import "loading-screen";
+@import "what-we-do";
