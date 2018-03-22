@@ -1,41 +1,27 @@
 # North Star
 
-## To Run Prototype
+The project is built in wordpress and uses docker to serve the project.
 
-The prototype is in the `/docs` folder. It uses [Jekyll](https://jekyllrb.com/docs/home).
+Run `npm i` to install node dependencies.
 
-- [First time install](#install-ruby)
-- [Run the project](#serve-the-project)
-
-### Serve the project
+## To run Wordpress
 
 ```
-bundle exec jekyll serve
+docker-compose up
 ```
 
-### First time install
+## To edit theme files
 
-#### Install Ruby
-```
-\curl -sSL https://get.rvm.io | bash -s stable
-```
-#### install and Use Ruby 2.2.5
-```
-rvm install "ruby-2.2.5"
-```
-```
-rvm 2.2.5
-```
+`themes/north-star` is the theme and is mounted inside of the docker container. Here is where you should edit the theme files
 
-#### Install Jekyll and the bundler
+## To edit the CSS
+
+The CSS is written in SASS. All SASS files are in the `sass/` folder and are compiled into the theme.
+
+In a seperate terminal window, run...
 
 ```
-gem install jekyll bundler
+npm start
 ```
 
-## Wordpress
-
-
-`docker-compose up`
-
-[http://localhost:8000/](http://localhost:8000/)
+The project will be served at [http://localhost:8000/](http://localhost:8000/)
