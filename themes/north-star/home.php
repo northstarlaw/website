@@ -35,30 +35,6 @@ get_header(); ?>
 				<?php get_template_part('partials/star', 'separator') ?>
 			</div>
 
-			<div class="what-we-do text-center flex flex--center-align flex-column bg-dim"
-           style="background-image: url(<?php the_field('what_we_do_image'); ?>); background-position-y: -100px"
-      >
-
-        <div class="what-we-do__wrap">
-          <div class="what-we-do__title">
-            <?php the_field('what_we_do_title'); ?>
-          </div>
-
-          <p class="what-we-do__text container">
-            <?php the_field('what_we_do_strapline'); ?>
-          </p>
-
-          <a href="<?php the_field('what_we_do_link')['url']; ?>" class="button">
-            Learn more
-          </a>
-        </div>
-      </div>
-
-      <div class="container">
-       <?php get_template_part('partials/star', 'separator') ?>
-      </div>
-
-
 
 			<?php endwhile; // End of the loop.
 			?>

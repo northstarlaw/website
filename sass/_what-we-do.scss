@@ -1,3 +1,4 @@
+
 .what-we-do {
   height: 465px;
   color: color("light-grey");
@@ -20,6 +21,14 @@
       margin-bottom: 20px;
     }
   }
+
+    &__link {
+      color: $blue;
+      text-decoration: none;
+      :hover {
+        color: $gold;
+      }
+    }
 
   &__text {
     font-size: $font-xlarge;
