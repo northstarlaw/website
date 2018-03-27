@@ -55,7 +55,7 @@ get_header(); ?>
               <?php endif; ?>
 
               <?php if (get_field('vcard')) : ?>
-              <a href="<?php the_field('vcard')['url']; ?>" download class="team-member__vcard">
+              <a href="<?= get_field('vcard')['url']; ?>" download class="team-member__vcard">
                 <span class="icon-user"></span>
                 Download vCard
               </a>

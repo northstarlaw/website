@@ -412,3 +412,9 @@ class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
 }
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ){
+  // add your extension to the array
+  $existing_mimes['vcf'] = 'text/x-vcard'; return $existing_mimes;
+}

@@ -25,3 +25,7 @@ npm start
 ```
 
 The project will be served at [http://localhost:8000/](http://localhost:8000/)
+
+## To release
+
+You must tag a release for it to be deployed automatically to [northstarlaw.co.uk](http://northstarlaw.co.uk)

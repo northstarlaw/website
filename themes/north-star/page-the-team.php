@@ -26,7 +26,7 @@ get_header(); ?>
         <div class="team-list">
           <div class="grid">
             <?php
-              $args = array( 'post_type' => 'people', 'posts_per_page' => 10 );
+              $args = array( 'post_type' => 'people', 'posts_per_page' => 99, 'orderby' => 'menu_order', 'order' => 'ASC' );
               $loop = new WP_Query( $args );
               while ( $loop->have_posts() ) : $loop->the_post();
                 $imageUrl = get_the_post_thumbnail_url();
