@@ -39,9 +39,9 @@ get_header(); ?>
                 <?php while ( have_rows('contact') ) : the_row(); ?>
                 <li>
                     <span class="team-member__contact-method"><?php the_sub_field('method'); ?></span>:
-                    <?php if(get_sub_field('method') == 'email') { ?><a href="mailto:<?php the_sub_field('value'); ?>"><?php } ?>
+                    <?php if(strtolower(get_sub_field('method')) == 'email') { ?><a href="mailto:<?php the_sub_field('value'); ?>"><?php } ?>
                     <?php the_sub_field('value'); ?>
-                    <?php if(get_sub_field('method') == 'email') { ?></a><?php } ?>
+                    <?php if(strtolower(get_sub_field('method')) == 'email') { ?></a><?php } ?>
                 </li>
                  <?php endwhile; ?>
               </ul>
