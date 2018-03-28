@@ -25,7 +25,8 @@
     &__link {
       color: $blue;
       text-decoration: none;
-      :hover {
+
+      &:hover {
         color: $gold;
       }
     }
