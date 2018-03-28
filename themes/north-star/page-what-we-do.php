@@ -95,17 +95,15 @@ get_header(); ?>
                            <?php endif; ?>
                          <?php endwhile; ?>
                        <?php endif; ?>
+                       <?php if(get_field('twitter', $id)):  ?>
+                        <a class="what-we-do__link" href='<?php the_field('twitter', $id); ?>'>  <span class="sr-only">twitter link></span><span class='icon-twitter what-we-do__link'></span>
+                        </a>
+                       <?php endif; ?>
                      </div>
                      <a href="<?php the_permalink($id); ?>" class="tabs__contact-link">
                        <span class="sr-only"><?php the_field('position', $id); ?>'s</span>
                        Full profile
                      </a>
-                     <?php if(get_field('twitter', $id)):  ?>
-                      <br/>
-                      <a class="what-we-do__link" href='<?php the_field('twitter', $id); ?>'>
-                        Follow us <span class='icon-twitter'></span>
-                      </a>
-                     <?php endif; ?>
                     </div>
                   <?php endwhile; ?>
                 <?php endif; ?>
