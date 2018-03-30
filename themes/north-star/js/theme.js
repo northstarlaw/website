@@ -154,6 +154,8 @@
       clickHandler: function (e) {
         if(window.innerWidth < 768) {
           e.preventDefault();
+        } else {
+          window.scrollTo(0,0);
         }
 
         if(e.target.dataset.primaryTrigger) {

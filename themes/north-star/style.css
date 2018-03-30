@@ -1118,7 +1118,8 @@ hr {
 .tabs__contact {
   font-family: "Montserrat", sans-serif;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto; 
+  margin-bottom: 10px; }
 
 .tabs__contact-image {
   max-width: 150px;
