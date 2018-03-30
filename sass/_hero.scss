@@ -26,6 +26,13 @@
     text-decoration: none;
     padding: 20px;
     display: inline-block;
+    
+    .icon-chevron {
+      transform: rotate(90deg);
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
   }
 
   &__section {

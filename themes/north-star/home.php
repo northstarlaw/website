@@ -13,7 +13,10 @@ get_header(); ?>
 		 </p>
 		</div>
 		<div class="hero__section text-center">
-		  <a href="#about" class="hero__link" data-scrollTo>Read more...</a>
+		  <a href="#about" class="hero__link" data-scrollTo>
+        Read more
+        <span class="icon-chevron"></span>
+      </a>
 		</div>
 
 		<main>

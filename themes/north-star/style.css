@@ -1016,6 +1016,11 @@ hr {
     text-decoration: none;
     padding: 20px;
     display: inline-block; }
+  .hero__link .icon-chevron {
+    transform: rotate(90deg);
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle; }
   .hero__section {
     font-size: 20px;
     background: #0d2333;

@@ -152,7 +152,9 @@
         }
       },
       clickHandler: function (e) {
-        e.preventDefault();
+        if(window.innerWidth < 768) {
+          e.preventDefault();
+        }
 
         if(e.target.dataset.primaryTrigger) {
           document.getElementById(e.target.dataset.primaryTrigger).click();
