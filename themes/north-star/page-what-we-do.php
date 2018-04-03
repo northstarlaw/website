@@ -84,7 +84,9 @@ get_header(); ?>
                     $id = get_sub_field('person')->ID;
                   ?>
                     <div class="tabs__contact text-center text-left-md">
-                     <img class="tabs__contact-image" src="<?= get_the_post_thumbnail_url($id, 'thumbnail'); ?>" alt="">
+                    <?php if (get_field('thumbnail', $id)): ?>
+                      <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)['url']; ?>" alt="">
+                    <?php endif; ?>
                      <div class="tabs__contact-body">
                        <h4 class="tabs__contact-name"><?= get_sub_field('person')->post_title; ?></h4>
                        <h5 class="tabs__contact-position"><?php the_field('position', $id); ?></h5>
@@ -95,6 +97,17 @@ get_header(); ?>
                            <?php endif; ?>
                          <?php endwhile; ?>
                        <?php endif; ?>
+
+                       <?php if(get_field('twitter', $id)): ?>
+                        <a href="<?php the_field('twitter', $id); ?>">
+                          twitter
+                        </a>
+                       <?php endif; ?>
+
+                       <a href="<?php the_permalink($id); ?>" class="tabs__contact-link">
+                         <span class="sr-only"><?php the_field('position', $id); ?>'s</span>
+                         Full profile
+                       </a>
                      </div>
                      <a href="<?php the_permalink($id); ?>" class="tabs__contact-link">
                        <span class="sr-only"><?php the_field('position', $id); ?>'s</span>

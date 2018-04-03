@@ -46,11 +46,13 @@ get_header(); ?>
               <?= do_shortcode('[contact-card show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></li>
               <?php bloginfo('admin_email') ?>
 
-              <p>
-                <a href="<?php the_field('linkedin_profile'); ?>" target="_blank">
-                  LinkedIn
-                </a>
-              </p>
+              <?php if(get_field('linkedin_profile')) : ?>
+                <p>
+                  <a href="<?php the_field('linkedin_profile'); ?>" target="_blank">
+                    LinkedIn
+                  </a>
+                </p>
+              <?php endif; ?>
           </div>
         </div>
 
