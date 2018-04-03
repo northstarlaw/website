@@ -85,7 +85,7 @@ get_header(); ?>
                   ?>
                     <div class="tabs__contact text-center text-left-md">
                     <?php if (get_field('thumbnail', $id)): ?>
-                      <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)['url']; ?>" alt="">
+                      <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
                     <?php endif; ?>
                      <div class="tabs__contact-body">
                        <h4 class="tabs__contact-name"><?= get_sub_field('person')->post_title; ?></h4>
