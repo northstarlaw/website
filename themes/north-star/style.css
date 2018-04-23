@@ -1243,18 +1243,6 @@ hr {
     padding: 5px;
     position: relative;
     background-color: #e6e6e6; }
-    .team-list__content:after {
-      font-family: 'icomoon';
-      color: #0d2333;
-      content: '\e902';
-      display: inline-block;
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translate(0, -50%); }
-      @media (min-width: 768px) {
-        .team-list__content:after {
-          font-size: 2rem; } }
     @media (min-width: 768px) {
       .team-list__content {
         padding: 15px; } }
