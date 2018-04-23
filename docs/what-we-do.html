@@ -52,7 +52,9 @@ bannerUrl: /assets/images/dispute-resolution.jpeg
           <h3 class="sr-only">Key Contacts</h3>
           {% for contact in department.contacts %}
             <div class="tabs__contact text-center text-left-md">
-              <img class="tabs__contact-image" src="{{ contact.image.url }}" alt="{{ contact.image.alt }}">
+              <a href="{{site.baseurl}}/team/{{contact.name | slugify }}">
+                <img class="tabs__contact-image" src="{{ contact.image.url }}" alt="{{ contact.image.alt }}">
+              </a>
               <div class="tabs__contact-body">
                 <h4 class="tabs__contact-name">{{ contact.name }}</h4>
                 <h5 class="tabs__contact-position">{{ contact.position }}</h5>
@@ -77,5 +79,3 @@ bannerUrl: /assets/images/dispute-resolution.jpeg
     <hr>
   </div>
 </div>
-
-
