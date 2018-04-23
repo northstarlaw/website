@@ -3,6 +3,10 @@
   color: color("light-grey");
   font-size: $font-normal;
 
+  @include mobile {
+    text-align: center;
+  }
+
   a {
     color: color("light-grey");
     text-decoration: none;
