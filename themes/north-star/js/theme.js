@@ -174,16 +174,18 @@
         }
       },
       setInitialTab: function () {
-        var link = _(tabs).find('[href="' + window.location.hash + '"]');
-        var initialTab = link.length
-          ? { id: window.location.hash, img: link[0].dataset.img, text: link[0].dataset.text }
-          : { id: _content[0].id, img: _links[0].dataset.img, text: _links[0].dataset.text };
+        if(window.innerWidth > '768') {
+          var link = _(tabs).find('[href="' + window.location.hash + '"]');
+          var initialTab = window.location.hash.length
+            ? { id: window.location.hash, img: link[0].dataset.img, text: link[0].dataset.text }
+            : { id: _links[0].getAttribute('aria-controls'), img: _links[0].dataset.img, text: _links[0].dataset.text };
 
-        tabEvents.showActiveTab(initialTab);
+          tabEvents.showActiveTab(initialTab);
 
-        setTimeout(function() {
-          window.scrollTo(0, 0);
-        }, 0);
+          setTimeout(function() {
+            window.scrollTo(0, 0);
+          }, 0);
+        }
 
         initialCall = false;
       },
@@ -195,7 +197,7 @@
         element.className = 'sr-only';
         document.body.append(element);
 
-        for (var i = 0; i < _links.length; i++) {
+        for (var i = 0; i < _('[data-img]').length; i++) {
           var image = new Image();
           image.src = _links[i].dataset.img;
           element.appendChild(image);
