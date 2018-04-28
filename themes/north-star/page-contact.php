@@ -46,9 +46,9 @@ get_header(); ?>
               <?php if(get_field('phone_number')): ?>
                 <span class="dn db-ns"><?php the_field('phone_number'); ?></span>
                 <a href="tel:<?php the_field('phone_number'); ?>" class="dn-ns"><?php the_field('phone_number'); ?></a>
-                <br/>
               <?php endif; ?>
               <?php if(get_field('fax_number')): ?>
+                <br/>
                 <?php the_field('fax_number'); ?>
               <?php endif; ?>
             </p>
@@ -83,7 +83,7 @@ get_header(); ?>
         var lightGrey = '#e6e6e6';
         var grey = '#4a4a4a';
         var gold = '#d7b377';
-        var image = '//github.com/northstarlaw/website/blob/master/docs/assets/images/pointer-gold-med.png?raw=true';
+        var image = '//raw.githubusercontent.com/northstarlaw/website/0150045b51d5d6197a1fea9186385d782f576c31/docs/assets/images/pointer-gold-med.png';
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: <?= $lat ?>, lng: <?= $long ?>},
