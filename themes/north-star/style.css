@@ -814,6 +814,16 @@ hr {
     .df-l {
       display: flex; } }
 
+.desktop-only {
+  display: none; }
+  @media (min-width: 768px) {
+    .desktop-only {
+      display: block; } }
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none; } }
+
 .list--unstyled, .list--inline {
   list-style: none;
   margin: 0;
