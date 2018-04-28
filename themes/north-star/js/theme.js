@@ -133,6 +133,8 @@
         _activeTab.addClass(tabShowClass);
         _tabs.find('#' + id).removeClass(tabsHideClass);
 
+        _(tabs).find('.tabs__links')[0].insertBefore(_activeTab[0], _(tabs).find('.tabs__links')[0].firstChild);
+
         if(_banner && args.img && args.text) {
           _banner.style.backgroundImage = "url('" + args.img + "')";
         }
