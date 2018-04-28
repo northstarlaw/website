@@ -52,21 +52,6 @@
     position: relative;
     background-color: color("light-grey");
 
-    &:after {
-      font-family: 'icomoon';
-      color: color("blue");
-      content: '\e902';
-      display: inline-block;
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translate(0, -50%);
-
-      @include tablet {
-        font-size: 2rem;
-      }
-    }
-
     @include tablet {
       padding: 15px;
     }
@@ -75,6 +60,11 @@
   &__title {
     font-family: $font-cormarant;
     font-size: $font-large;
+    min-height: 60px;
+
+    @media screen and (min-width: 470px){
+      min-height: 0;
+    }
   }
 
   &__position {

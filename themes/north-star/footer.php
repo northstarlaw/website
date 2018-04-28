@@ -35,7 +35,10 @@
             <?= do_shortcode('[contact-card show_name=0 show_get_directions=0 show_email=0 show_phone=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?>
 
             <ul class="list--unstyled footer__row">
-              <li><tel itemprop="telephone"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></tel></li>
+              <li>
+								<tel class="desktop-only"itemprop="telephone"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></tel>
+								<a class="mobile-only" href="tel:0203-355-9610"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></a>
+							</li>
             </ul>
           </div>
         </div>

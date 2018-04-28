@@ -42,9 +42,18 @@ get_header(); ?>
             <a href="https://www.google.co.uk/maps/place/North+Star+Law/@<?= $lat.','.$long ?>,15z/data=!4m2!3m1!1s0x0:0x631abfb9a1fa593c?sa=X&ved=0ahUKEwiV8qjBkeTZAhUS66QKHe3rDGsQ_BIIqAEwDg" target="_blank">Open in Goople Maps</a>
 
             <h2>Contact</h2>
-
-              <?= do_shortcode('[contact-card show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></li>
-              <?php bloginfo('admin_email') ?>
+            <p>
+              <?php if(get_field('phone_number')): ?>
+                <span class="dn db-ns"><?php the_field('phone_number'); ?></span>
+                <a href="tel:<?php the_field('phone_number'); ?>" class="dn-ns"><?php the_field('phone_number'); ?></a>
+                <br/>
+              <?php endif; ?>
+              <?php if(get_field('fax_number')): ?>
+                <?php the_field('fax_number'); ?>
+              <?php endif; ?>
+            </p>
+            
+            <a href="mailto:<?php bloginfo('admin_email') ?>"><?php bloginfo('admin_email') ?></a>
 
               <?php if(get_field('linkedin_profile')) : ?>
                 <p>

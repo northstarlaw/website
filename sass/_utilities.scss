@@ -168,7 +168,7 @@
     display: none;
 
     @include tablet {
-      display: block;
+      display: block !important;
     }
   }
 
@@ -230,5 +230,19 @@
     &-l {
       display: flex;
     }
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.mobile-only {
+  @include tablet {
+    display: none;
   }
 }

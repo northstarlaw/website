@@ -24,6 +24,10 @@
         cursor: none;
       }
     }
+
+    [class^="icon"] {
+      pointer-events: none;
+    }
   }
 
   &__item {
