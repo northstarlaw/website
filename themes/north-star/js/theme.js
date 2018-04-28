@@ -45,11 +45,7 @@
       scroller.addEventListener('click', function (e) {
         e.preventDefault();
 
-        window.scroll({
-          top: target[0].offsetTop - _header[0].clientHeight,
-          left: 0,
-          behavior: 'smooth'
-        });
+        jQuery("html, body").animate({ scrollTop: (target[0].offsetTop - _header[0].clientHeight) + 'px' });
       });
     })
   }
