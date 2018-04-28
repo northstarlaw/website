@@ -168,7 +168,7 @@
     display: none;
 
     @include tablet {
-      display: block;
+      display: block !important;
     }
   }
 
