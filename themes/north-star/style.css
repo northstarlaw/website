@@ -1104,6 +1104,8 @@ hr {
       color: #4a4a4a;
       text-decoration: none;
       cursor: none; }
+  .tabs__link [class^="icon"] {
+    pointer-events: none; }
 
 .tabs__item {
   display: flex; }
