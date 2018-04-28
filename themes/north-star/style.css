@@ -1005,6 +1005,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 83vh;
   height: calc(100vh - 135px);
   color: #e6e6e6;
   font-size: 34px; }
