@@ -174,7 +174,7 @@
         }
       },
       setInitialTab: function () {
-        if(window.innerWidth > '768') {
+        if(window.innerWidth > '768' || (window.innerWidth <= '768' && window.location.hash)) {
           var link = _(tabs).find('[href="' + window.location.hash + '"]');
           var initialTab = window.location.hash.length
             ? { id: window.location.hash, img: link[0].dataset.img, text: link[0].dataset.text }
@@ -185,6 +185,8 @@
           setTimeout(function() {
             window.scrollTo(0, 0);
           }, 0);
+        } else {
+          _banner.style.backgroundImage = "url('" + _links[0].dataset.img + "')";
         }
 
         initialCall = false;
