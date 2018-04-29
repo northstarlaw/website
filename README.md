@@ -28,9 +28,9 @@ The project will be served at [http://localhost:8000/](http://localhost:8000/)
 
 ## To release
 
-A release is made when code is commited to `prod` branch. Once all code set to release is in the `master` branch, make a pull request to `prod` with the title being the version of the release and 'squash and merge'. You may need to pull from `prod` into `master` to get a smooth merge.
+A release is made when a release is created from `master` branch. Once all code set to release is in the `master` branch, create a release with the title being the version of number.
 
-Once merged, a deployment will begin via a githook made to the server. You may need to purge Cloudflare to see changes.
+Once created, a deployment will begin via a githook made to the server. You may need to purge Cloudflare to see changes.
 
 ## To rollback
-Simply revert the commit in `prod` and it will automatically redeploy.
+Go to Settings > Webhooks and click 'redeploy' on the hook that represents the previous release (this is likely to be the second in the list).
