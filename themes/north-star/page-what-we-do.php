@@ -84,7 +84,7 @@ get_header(); ?>
                   ?>
                     <div class="tabs__contact text-center text-left-md">
                     <?php if (get_field('thumbnail', $id)): ?>
-                      <a href="{{site.baseurl}}/team/{{contact.name | slugify }}">
+                      <a href="<?php the_permalink($id); ?>">
                         <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
                       </a>
                     <?php endif; ?>
