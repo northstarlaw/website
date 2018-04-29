@@ -1301,12 +1301,14 @@ hr {
     margin-bottom: 40px; }
     .mobile-menu li > a {
       font-size: 20px; }
-  .mobile-menu__nav-dropdown li {
-    margin-top: 25px; }
-  .mobile-menu__nav-dropdown a {
-    font-size: 18px;
-    padding: 10px 0;
-    font-weight: 300; }
+  .mobile-menu__nav-dropdown {
+    margin-left: 15px; }
+    .mobile-menu__nav-dropdown li {
+      margin-top: 25px; }
+    .mobile-menu__nav-dropdown a {
+      font-size: 18px;
+      padding: 10px 0;
+      font-weight: 300; }
   .mobile-menu__close {
     position: absolute;
     top: 0;
