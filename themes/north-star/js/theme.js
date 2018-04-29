@@ -151,9 +151,9 @@
       },
       clickHandler: function (e) {
         e.preventDefault();
-        
-        if(window.innerWidth >= 768) {
-          window.scrollTo(0,0);
+
+        if(window.innerWidth > 768) {
+          jQuery("html, body").animate({ scrollTop: '0px' });
         }
 
         if(e.target.dataset.primaryTrigger) {
@@ -171,6 +171,10 @@
             img: e.target.dataset.img || null,
             text: e.target.dataset.text || null
           });
+        } else {
+          if(window.innerWidth <= 768) {
+            _content.forEach(tabEvents.resetTabs);
+          }
         }
       },
       setInitialTab: function () {

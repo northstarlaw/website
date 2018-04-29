@@ -1062,10 +1062,11 @@ hr {
   .footer__first-row {
     margin-bottom: 50px; }
   .footer__meta {
-    font-size: 16px; }
+    font-size: 16px;
+    margin-top: 30px; }
     @media screen and (min-width: 768px) {
       .footer__meta {
-        margin-top: 93px; } }
+        margin-top: 50px; } }
   .footer h1 {
     margin-top: 0;
     margin-bottom: 10px;
