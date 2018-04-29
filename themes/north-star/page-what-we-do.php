@@ -38,6 +38,7 @@ get_header(); ?>
                 <?php
                     $args = array( 'post_type' => 'departments', 'posts_per_page' => 10, 'order' => 'ASC' );
                     $loop = new WP_Query( $args );
+
                     while ( $loop->have_posts() ) : $loop->the_post();
                       $imageUrl = get_the_post_thumbnail_url();
                       $position = get_field('position');
@@ -60,8 +61,6 @@ get_header(); ?>
           </div>
           <section class="col col-md-9">
             <?php
-              $args = array( 'post_type' => 'departments', 'posts_per_page' => 10 );
-              $loop = new WP_Query( $args );
               while ( $loop->have_posts() ) : $loop->the_post();
                 $imageUrl = get_the_post_thumbnail_url();
                 $position = get_field('position');
@@ -85,7 +84,9 @@ get_header(); ?>
                   ?>
                     <div class="tabs__contact text-center text-left-md">
                     <?php if (get_field('thumbnail', $id)): ?>
-                      <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
+                      <a href="{{site.baseurl}}/team/{{contact.name | slugify }}">
+                        <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
+                      </a>
                     <?php endif; ?>
                      <div class="tabs__contact-body">
                        <h4 class="tabs__contact-name"><?= get_sub_field('person')->post_title; ?></h4>

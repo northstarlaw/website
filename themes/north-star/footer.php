@@ -34,7 +34,7 @@
           <div class="col col-md text-right-md footer__row">
             <?= do_shortcode('[contact-card show_name=0 show_get_directions=0 show_email=0 show_phone=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?>
 
-            <ul class="list--unstyled footer__row">
+            <ul class="list--unstyled">
               <li>
 								<tel class="desktop-only"itemprop="telephone"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></tel>
 								<a class="mobile-only" href="tel:0203-355-9610"><?= do_shortcode('[contact-card show_email=0 show_address=0 show_name=0 show_get_directions=0 show_contact=0 show_opening_hours=0 show_map=0]'); ?></a>

@@ -24,9 +24,10 @@
 
   &__meta {
     font-size: $font-small;
+    margin-top: 30px;
 
     @include tablet {
-      margin-top: 93px;
+      margin-top: 50px;
     }
   }
 
