@@ -34,8 +34,13 @@
     display: flex;
     &--hidden {
       display: none;
+    }
+
+    &--hidden-mobile {
+      display: none;
+
       @include tablet {
-        display: block;
+        display: flex;
       }
     }
   }

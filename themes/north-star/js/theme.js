@@ -140,14 +140,18 @@
           _banner.style.backgroundImage = "url('" + args.img + "')";
         }
       },
-      resetTabs: function (body, index) {
+      resetTabs: function (body, index, mobileOnly) {
         var _link = _('[href="#' + body.id + '"]');
         _(body).attr('aria-hidden', 'true');
 
         _link.attr('aria-selected', false);
         _link.attr('title', '');
 
-        _(body).addClass(tabsHideClass);
+        if(mobileOnly) {
+          _(body).addClass(tabsHideClass + '-mobile');
+        } else {
+          _(body).addClass(tabsHideClass);
+        }
         _link.removeClass(tabShowClass);
 
         if(index === _content.length - 1 && initialCall) {
@@ -178,7 +182,9 @@
           });
         } else {
           if(window.innerWidth <= 768) {
-            _content.forEach(tabEvents.resetTabs);
+            _content.forEach(function (item, index) {
+              tabEvents.resetTabs(item, index, true);
+            });
           }
         }
       },
