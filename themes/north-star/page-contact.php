@@ -44,20 +44,24 @@ get_header(); ?>
             <h2>Contact</h2>
             <p>
               <?php if(get_field('phone_number')): ?>
-                <span class="dn db-ns"><?php the_field('phone_number'); ?></span>
+                <abbr title="telephone" class="bold">Telephone</abbr>:
+                <span class="dn di-ns"><?php the_field('phone_number'); ?></span>
                 <a href="tel:<?php the_field('phone_number'); ?>" class="dn-ns"><?php the_field('phone_number'); ?></a>
               <?php endif; ?>
               <?php if(get_field('fax_number')): ?>
                 <br/>
-                <?php the_field('fax_number'); ?>
+                <span class="bold">Fax:</span> <?php the_field('fax_number'); ?>
               <?php endif; ?>
             </p>
-            
-            <a href="mailto:<?php bloginfo('admin_email') ?>"><?php bloginfo('admin_email') ?></a>
+
+            <p>
+              <a href="mailto:<?php bloginfo('admin_email') ?>"><?php bloginfo('admin_email') ?></a>
+            </p>
 
               <?php if(get_field('linkedin_profile')) : ?>
                 <p>
-                  <a href="<?php the_field('linkedin_profile'); ?>" target="_blank">
+                  <a href="<?php the_field('linkedin_profile'); ?>" target="_blank" class="dib">
+                    <i class="icon-linkedin icon-left"></i>
                     LinkedIn
                   </a>
                 </p>

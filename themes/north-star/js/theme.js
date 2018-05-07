@@ -122,6 +122,7 @@
       showActiveTab: function (args) {
         var id = args.id.replace(/^#/, '');
         var _activeTab = _tabs.find('[href="#' + id + '"]');
+        var _activeTabBody = _tabs.find('#' + id);
         _activeTab.attr('aria-selected', true);
         _activeTab.attr('title', 'Active tab');
         _('#' + id).attr('aria-hidden', 'false');
@@ -129,7 +130,11 @@
         _activeTab.addClass(tabShowClass);
         _tabs.find('#' + id).removeClass(tabsHideClass);
 
-        _(tabs).find('.tabs__links')[0].insertBefore(_activeTab[0], _(tabs).find('.tabs__links')[0].firstChild);
+        if(window.innerWidth > 768) {
+          _(tabs).find('.tabs__links')[0].insertBefore(_activeTab[0], _(tabs).find('.tabs__links')[0].firstChild);
+        } else {
+          _(tabs).find('.js-mobile-tab-hook')[0].insertBefore(_activeTabBody[0].parentNode, _(tabs).find('.js-mobile-tab-hook')[0].firstChild);
+        }
 
         if(_banner && args.img && args.text) {
           _banner.style.backgroundImage = "url('" + args.img + "')";
@@ -152,7 +157,7 @@
       clickHandler: function (e) {
         e.preventDefault();
 
-        if(window.innerWidth > 768) {
+        if(e.currentTarget.getAttribute('aria-controls')) {
           jQuery("html, body").animate({ scrollTop: '0px' });
         }
 

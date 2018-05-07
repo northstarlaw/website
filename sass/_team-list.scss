@@ -78,4 +78,18 @@
     white-space: nowrap;
     display: block;
   }
+
+  .grid {
+    @include tablet {
+      margin-right: -25px;
+      margin-left: -25px;
+    }
+  }
+
+  [class^="col"] {
+    @include tablet {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
 }

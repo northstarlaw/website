@@ -209,6 +209,20 @@
   }
 }
 
+.di {
+  display: inline;
+
+  @include tablet {
+    &-ns {
+      display: inline;
+    }
+  }
+}
+
+.dib {
+  display: inline-block;
+}
+
 .df {
   display: flex;
 
@@ -245,4 +259,13 @@
   @include tablet {
     display: none;
   }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.icon-left {
+  float: left;
+  margin-right: 5px;
 }

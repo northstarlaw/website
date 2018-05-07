@@ -555,7 +555,8 @@ body {
   color: #4a4a4a;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  font-size: 15px; }
+  font-size: 15px;
+  background: #ffffff; }
   @media screen and (min-width: 768px) {
     body {
       font-size: 16px; } }
@@ -800,6 +801,15 @@ hr {
     .dn-l {
       display: none; } }
 
+.di {
+  display: inline; }
+  @media screen and (min-width: 768px) {
+    .di-ns {
+      display: inline; } }
+
+.dib {
+  display: inline-block; }
+
 .df {
   display: flex; }
   .df-ns {
@@ -823,6 +833,13 @@ hr {
 @media screen and (min-width: 768px) {
   .mobile-only {
     display: none; } }
+
+.bold {
+  font-weight: 700; }
+
+.icon-left {
+  float: left;
+  margin-right: 5px; }
 
 .list--unstyled, .list--inline {
   list-style: none;
@@ -1278,6 +1295,14 @@ hr {
     overflow: hidden;
     white-space: nowrap;
     display: block; }
+  @media screen and (min-width: 768px) {
+    .team-list .grid {
+      margin-right: -25px;
+      margin-left: -25px; } }
+  @media screen and (min-width: 768px) {
+    .team-list [class^="col"] {
+      padding-left: 25px;
+      padding-right: 25px; } }
 
 .mobile-menu {
   position: fixed;

@@ -25,6 +25,7 @@ body {
   font-family: $font-montserrat;
   font-weight: $font-montserrat-light;
   font-size: $body-font-size-mobile;
+  background: #ffffff;
 
   @include tablet {
     font-size: $body-font-size;

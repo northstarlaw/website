@@ -59,59 +59,61 @@ get_header(); ?>
               </div>
             </aside>
           </div>
-          <section class="col col-md-9">
+          <section class="col col-md-9 js-mobile-tab-hook">
             <?php
               while ( $loop->have_posts() ) : $loop->the_post();
                 $imageUrl = get_the_post_thumbnail_url();
                 $position = get_field('position');
             ?>
-            <h2 class="sr-only-m tabs__mobile-head">
-              <a href="#<?= sanitize_title(get_the_title()); ?>" class="tabs__link" data-primary-trigger="<?= sanitize_title(get_the_title()); ?>-tab">
-                <?php the_title(); ?>
-                <span class="icon-plus"></span>
-                <span class="icon-minus"></span>
-              </a>
-            </h2>
-            <div id="<?= sanitize_title(get_the_title()); ?>" class="tabs__item grid" role="tabpanel" aria-labelledby="<?= sanitize_title(get_the_title()); ?>-tab">
-              <div class="col col-md-9 tabs__item-content">
-                <?php the_content(); ?>
-              </div>
-              <div class="col col-md-3">
-                <?php if (have_rows('key_contacts')) :?>
-                  <h3 class="sr-only">Key Contacts</h3>
-                  <?php while ( have_rows('key_contacts') ) : the_row();
-                    $id = get_sub_field('person')->ID;
-                  ?>
-                    <div class="tabs__contact text-center text-left-md">
-                    <?php if (get_field('thumbnail', $id)): ?>
-                      <a href="<?php the_permalink($id); ?>">
-                        <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
-                      </a>
-                    <?php endif; ?>
-                     <div class="tabs__contact-body">
-                       <h4 class="tabs__contact-name"><?= get_sub_field('person')->post_title; ?></h4>
-                       <h5 class="tabs__contact-position"><?php the_field('position', $id); ?></h5>
-                       <?php if (have_rows('contact', $id)) :?>
-                         <?php while ( have_rows('contact', $id) ) : the_row(); ?>
-                           <?php if(get_sub_field('method', $id) == 'email'): ?>
-                              <div class="tabs__contact-email"><?php the_sub_field('value', $id) ?></div>
-                           <?php endif; ?>
-                         <?php endwhile; ?>
-                       <?php endif; ?>
-                       <a href="<?php the_permalink($id); ?>" class="tabs__contact-link">
-                         <span class="sr-only"><?php the_field('position', $id); ?>'s</span>
-                         Full profile
-                       </a>
-                       <?php if(get_field('twitter', $id)):  ?>
-                         <br/>
-                         <a class="what-we-do__link" href='<?php the_field('twitter', $id); ?>'>
-                           Follow us <span class='icon-twitter'></span>
+            <div class="js-mobile-content-hook">
+              <h2 class="sr-only-m tabs__mobile-head">
+                <a href="#<?= sanitize_title(get_the_title()); ?>" class="tabs__link" data-primary-trigger="<?= sanitize_title(get_the_title()); ?>-tab">
+                  <?php the_title(); ?>
+                  <span class="icon-plus"></span>
+                  <span class="icon-minus"></span>
+                </a>
+              </h2>
+              <div id="<?= sanitize_title(get_the_title()); ?>" class="tabs__item grid" role="tabpanel" aria-labelledby="<?= sanitize_title(get_the_title()); ?>-tab">
+                <div class="col col-md-9 tabs__item-content">
+                  <?php the_content(); ?>
+                </div>
+                <div class="col col-md-3">
+                  <?php if (have_rows('key_contacts')) :?>
+                    <h3 class="sr-only">Key Contacts</h3>
+                    <?php while ( have_rows('key_contacts') ) : the_row();
+                      $id = get_sub_field('person')->ID;
+                    ?>
+                      <div class="tabs__contact text-center text-left-md">
+                      <?php if (get_field('thumbnail', $id)): ?>
+                        <a href="<?php the_permalink($id); ?>">
+                          <img class="tabs__contact-image" src="<?php the_field('thumbnail', $id)->url; ?>" alt="">
                         </a>
-                       <?php endif; ?>
-                     </div>
-                    </div>
-                  <?php endwhile; ?>
-                <?php endif; ?>
+                      <?php endif; ?>
+                       <div class="tabs__contact-body">
+                         <h4 class="tabs__contact-name"><?= get_sub_field('person')->post_title; ?></h4>
+                         <h5 class="tabs__contact-position"><?php the_field('position', $id); ?></h5>
+                         <?php if (have_rows('contact', $id)) :?>
+                           <?php while ( have_rows('contact', $id) ) : the_row(); ?>
+                             <?php if(get_sub_field('method', $id) == 'email'): ?>
+                                <div class="tabs__contact-email"><?php the_sub_field('value', $id) ?></div>
+                             <?php endif; ?>
+                           <?php endwhile; ?>
+                         <?php endif; ?>
+                         <a href="<?php the_permalink($id); ?>" class="tabs__contact-link">
+                           <span class="sr-only"><?php the_field('position', $id); ?>'s</span>
+                           Full profile
+                         </a>
+                         <?php if(get_field('twitter', $id)):  ?>
+                           <br/>
+                           <a class="what-we-do__link" href='<?php the_field('twitter', $id); ?>'>
+                             Follow us <span class='icon-twitter'></span>
+                          </a>
+                         <?php endif; ?>
+                       </div>
+                      </div>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
+                </div>
               </div>
             </div>
             <?php endwhile; ?>
