@@ -1140,6 +1140,9 @@ hr {
   display: flex; }
   .tabs__item--hidden {
     display: none; }
+    @media screen and (min-width: 768px) {
+      .tabs__item--hidden {
+        display: block; } }
 
 .tabs__item-content {
   padding-top: 15px;
