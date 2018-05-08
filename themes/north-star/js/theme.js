@@ -129,6 +129,7 @@
 
         _activeTab.addClass(tabShowClass);
         _tabs.find('#' + id).removeClass(tabsHideClass);
+        _tabs.find('#' + id).removeClass(tabsHideClass + '-mobile');
 
         if(window.innerWidth > 768) {
           _(tabs).find('.tabs__links')[0].insertBefore(_activeTab[0], _(tabs).find('.tabs__links')[0].firstChild);
