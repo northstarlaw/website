@@ -1143,7 +1143,7 @@ hr {
   .tabs__item--hidden-mobile {
     display: none; }
     @media screen and (min-width: 768px) {
-      .tabs__item--hidden-mobile {
+      .tabs__item--hidden-mobile[aria-hidden="false"] {
         display: flex; } }
 
 .tabs__item-content {

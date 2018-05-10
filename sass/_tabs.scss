@@ -40,7 +40,9 @@
       display: none;
 
       @include tablet {
-        display: flex;
+        &[aria-hidden="false"] {
+          display: flex;
+        }
       }
     }
   }
