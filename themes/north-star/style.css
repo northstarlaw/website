@@ -556,7 +556,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 15px;
-  background: #ffffff; }
+  background-color: #ffffff; }
   @media screen and (min-width: 768px) {
     body {
       font-size: 16px; } }
@@ -1024,7 +1024,6 @@ hr {
   background-position: center;
   height: 83vh;
   height: calc(100vh - 135px);
-  color: #e6e6e6;
   font-size: 34px; }
   .hero__text {
     font-family: "Cormorant Garamond", serif;

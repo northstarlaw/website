@@ -122,18 +122,16 @@
       showActiveTab: function (args) {
         var id = args.id.replace(/^#/, '');
         var _activeTab = _tabs.find('[href="#' + id + '"]');
-        var _activeTabBody = _tabs.find('#' + id);
+        var _activeTabBody = _('#' + id);
         _activeTab.attr('aria-selected', true);
         _activeTab.attr('title', 'Active tab');
-        _('#' + id).attr('aria-hidden', 'false');
+        _activeTabBody.attr('aria-hidden', 'false');
 
         _activeTab.addClass(tabShowClass);
         _activeTabBody.removeClass(tabsHideClass);
         _activeTabBody.removeClass(tabsHideClass + '-mobile');
 
-        if(window.innerWidth > 768) {
-          _(tabs).find('.tabs__links')[0].insertBefore(_activeTab[0], _(tabs).find('.tabs__links')[0].firstChild);
-        } else {
+        if(window.innerWidth < 768) {
           _(tabs).find('.js-mobile-tab-hook')[0].insertBefore(_activeTabBody[0].parentNode, _(tabs).find('.js-mobile-tab-hook')[0].firstChild);
         }
 
@@ -141,19 +139,15 @@
           _banner.style.backgroundImage = "url('" + args.img + "')";
         }
       },
-      resetTabs: function (body, index, mobileOnly) {
+      resetTabs: function (body, index) {
         var _link = _('[href="#' + body.id + '"]');
         _(body).attr('aria-hidden', 'true');
 
         _link.attr('aria-selected', false);
         _link.attr('title', '');
-
-        if(mobileOnly) {
-          _(body).addClass(tabsHideClass + '-mobile');
-        } else {
-          _(body).addClass(tabsHideClass);
-        }
         _link.removeClass(tabShowClass);
+
+        _(body).addClass(tabsHideClass);
 
         if(index === _content.length - 1 && initialCall) {
           tabEvents.setInitialTab();
@@ -175,6 +169,8 @@
           window.location.hash = e.target.hash;
 
           [].forEach.call(_content, tabEvents.resetTabs);
+          _(e.target.hash).removeClass(tabsHideClass + '-mobile');
+          _(e.target).removeClass('tabs__link--inactive-mobile');
 
           tabEvents.showActiveTab({
             id: e.target.hash,
@@ -182,15 +178,15 @@
             text: e.target.dataset.text || null
           });
         } else {
-          if(window.innerWidth <= 768) {
-            _content.forEach(function (item, index) {
-              tabEvents.resetTabs(item, index, true);
-            });
+          if(window.innerWidth < 768) {
+            _(e.target.hash).addClass(tabsHideClass + '-mobile');
+            _('.tabs__mobile-head ' + '[data-primary-trigger="' + e.target.id + '"]').removeClass(tabShowClass)
+            _(e.target).attr('aria-selected', false);
           }
         }
       },
       setInitialTab: function () {
-        if(window.innerWidth > '768' || (window.innerWidth <= '768' && window.location.hash)) {
+        if(window.innerWidth >= '768' || (window.innerWidth < '768' && window.location.hash)) {
           var link = _(tabs).find('[href="' + window.location.hash + '"]');
           var initialTab = window.location.hash.length
             ? { id: window.location.hash, img: link[0].dataset.img, text: link[0].dataset.text }
@@ -200,7 +196,7 @@
 
           setTimeout(function() {
             window.scrollTo(0, 0);
-          }, 0);
+          }, 1);
         } else {
           _banner.style.backgroundImage = "url('" + _links[0].dataset.img + "')";
         }
