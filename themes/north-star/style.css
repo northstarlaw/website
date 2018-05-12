@@ -1024,7 +1024,9 @@ hr {
   background-position: center;
   height: 83vh;
   height: calc(100vh - 135px);
-  font-size: 34px; }
+  color: #e6e6e6;
+  font-size: 34px;
+  overflow: hidden; }
   .hero__text {
     font-family: "Cormorant Garamond", serif;
     font-weight: 200;

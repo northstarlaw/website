@@ -4,7 +4,9 @@
   background-position: center;
   height: 83vh;
   height: calc(100vh - 135px);
+  color: color("light-grey");
   font-size: $hero-font-size;
+  overflow: hidden;
 
   &__text {
     font-family: $font-cormarant;
