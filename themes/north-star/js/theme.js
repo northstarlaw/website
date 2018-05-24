@@ -194,9 +194,11 @@
 
           tabEvents.showActiveTab(initialTab);
 
-          setTimeout(function() {
-            window.scrollTo(0, 0);
-          }, 1);
+          if (window.location.hash) {
+            setTimeout(function() {
+              window.scrollTo(0, 0);
+            }, 10);
+          }
         } else {
           _banner.style.backgroundImage = "url('" + _links[0].dataset.img + "')";
         }
