@@ -211,7 +211,7 @@
       preloadImages: function () {
         var element = document.createElement('div');
         element.className = 'sr-only';
-        document.body.append(element);
+        document.body.appendChild(element);
 
         for (var i = 0; i < _('[data-img]').length; i++) {
           var image = new Image();
