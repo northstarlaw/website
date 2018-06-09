@@ -52,7 +52,7 @@
 
       var windowClickHandler = function (e) {
         if (e.target === trigger) return;
-        if(!$(e.target).parents('.js-dropdown') && _('[aria-expanded="true"]')) {
+        if(!jQuery(e.target).parents('.js-dropdown') && _('[aria-expanded="true"]')) {
           _('[aria-expanded="true"]').forEach(function (dropdown) {
             dropdown.setAttribute('aria-expanded', 'false');
           });
