@@ -52,7 +52,7 @@
 
       var windowClickHandler = function (e) {
         if (e.target === trigger) return;
-        if(!jQuery(e.target).parents('.js-dropdown') && _('[aria-expanded="true"]')) {
+        if(!jQuery(e.target).parents('.js-dropdown').length && _('[aria-expanded="true"]')) {
           _('[aria-expanded="true"]').forEach(function (dropdown) {
             dropdown.setAttribute('aria-expanded', 'false');
           });
@@ -192,7 +192,7 @@
           if (window.location.hash) {
             setTimeout(function() {
               window.scrollTo(0, 0);
-            }, 10);
+            }, 100);
           }
         } else {
           _banner.style.backgroundImage = "url('" + _links[0].dataset.img + "')";
