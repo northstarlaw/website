@@ -12,11 +12,6 @@
   var _dropdowns = _('.js-dropdown');
   var _scrollers = _('[data-scrollTo]');
 
-  function findAncestor (el, sel) {
-    while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,sel)));
-    return el;
-  }
-
   if (_mobileMenuOpenButton) {
     var _body = _('body');
 
@@ -57,7 +52,7 @@
 
       var windowClickHandler = function (e) {
         if (e.target === trigger) return;
-        if(!findAncestor(e.target, '.js-dropdown') && _('[aria-expanded="true"]')) {
+        if(!$(e.target).parents('.js-dropdown') && _('[aria-expanded="true"]')) {
           _('[aria-expanded="true"]').forEach(function (dropdown) {
             dropdown.setAttribute('aria-expanded', 'false');
           });
