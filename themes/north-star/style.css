@@ -1085,11 +1085,17 @@ hr {
     @media screen and (min-width: 768px) {
       .footer__meta {
         margin-top: 50px; } }
-    .footer__meta a:before {
-      content: '|';
-      margin: 0 5px; }
-    .footer__meta a:first-of-type:before {
-      display: none; }
+  .footer__meta-pages {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .footer__meta-pages li {
+      display: inline-block; }
+      .footer__meta-pages li:before {
+        content: '|';
+        margin: 0 5px; }
+      .footer__meta-pages li:first-child:before {
+        display: none; }
   .footer h1 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -1565,12 +1571,8 @@ hr {
     -moz-appearance: none;
     appearance: none;
     border: none;
-<<<<<<< HEAD
-    color: #e6e6e6; }
-=======
     color: #e6e6e6;
     background: none; }
->>>>>>> e4ad3085f526e42de2df4c67e2b6db7114fa33b2
   .cookie-notice .container {
     display: flex;
     justify-content: space-between;
