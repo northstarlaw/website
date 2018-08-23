@@ -2,13 +2,18 @@
   background: $grey;
   color: $light-grey;
 
-  &-button {
+  &-close {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border: none;
     color: $light-grey;
     background: none;
+    transition: color .3s ease;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
   }
 
   .container {
