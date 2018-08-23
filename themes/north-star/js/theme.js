@@ -11,6 +11,7 @@
   var _mobileMenuCloseButton = _('.js-mobile-menu-close');
   var _dropdowns = _('.js-dropdown');
   var _scrollers = _('[data-scrollTo]');
+  var $cookie = jQuery('.cookie-notice');
 
   if (_mobileMenuOpenButton) {
     var _body = _('body');
@@ -220,6 +221,21 @@
     _content.forEach(tabEvents.resetTabs);
 
     tabEvents.preloadImages();
+  }
+
+  if ($cookie) {
+      var $close = $cookie.find('.js-cookie-close');
+
+      if(document.cookie.split(';').filter(function(item) {
+              return item.indexOf('cookie_notice_dismissed=') >= 0
+          }).length) {
+          $cookie.hide();
+      }
+
+      $close.on('click', function() {
+          document.cookie = 'cookie_notice_dismissed=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+          $cookie.hide();
+      });
   }
 
 })();

@@ -290,6 +290,52 @@ function custom_post_type() {
 
         // Registering your Custom Post Type
         register_post_type( 'departments', $args );
+
+    $labels = array(
+        'name'                => _x( 'Cookie Notice', 'Post Type General Name', 'north-star' ),
+        'singular_name'       => _x( 'Cookie Notice', 'Post Type Singular Name', 'north-star' ),
+        'menu_name'           => __( 'Cookie Notice', 'north-star' ),
+        'view_item'           => __( 'View Cookie Notice', 'north-star' ),
+        'edit_item'           => __( 'Edit Cookie Notice', 'north-star' ),
+        'update_item'         => __( 'Update Cookie Notice', 'north-star' ),
+        'search_items'        => __( 'Search Cookie Notice', 'north-star' ),
+        'not_found'           => __( 'Not Found', 'north-star' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'north-star' ),
+    );
+
+    $args = array(
+        'label'               => __( 'cookie', 'north-star' ),
+        'description'         => __( 'Cookie notice text for website', 'north-star' ),
+        'labels'              => $labels,
+//        'capabilities' => array(
+//            'create_posts' => 'do_not_allow',
+//        ),
+//        'map_meta_cap' => true,
+        // Features this CPT supports in Post Editor
+        'supports'            => array('editor', 'revisions'),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        'taxonomies'          => array( 'genres' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => false,
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 25,
+        'can_export'          => true,
+        'has_archive'         => false,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => false,
+        'capability_type'     => 'page',
+        'menu_icon'           => 'dashicons-unlock'
+    );
+
+    // Registering your Custom Post Type
+    register_post_type( 'cookie', $args );
 }
 
 /* Hook into the 'init' action so that the function
