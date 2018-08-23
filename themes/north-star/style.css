@@ -1560,7 +1560,12 @@ hr {
     -moz-appearance: none;
     appearance: none;
     border: none;
+<<<<<<< HEAD
     color: #e6e6e6; }
+=======
+    color: #e6e6e6;
+    background: none; }
+>>>>>>> e4ad3085f526e42de2df4c67e2b6db7114fa33b2
   .cookie-notice .container {
     display: flex;
     justify-content: space-between;
