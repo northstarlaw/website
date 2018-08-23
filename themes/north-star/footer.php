@@ -48,6 +48,7 @@
             <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Legal and Regulatory' ) ) ); ?>">
               Legal and Regulatory Information
             </a>
+              <a href="/privacy-policy">Privacy Policy</a>
           </div>
           <div class="col-md-4 text-right">
             <img src="<?= get_template_directory_uri(); ?>/assets/white-logo.png" class="footer__image-large" itemprop="logo">

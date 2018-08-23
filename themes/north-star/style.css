@@ -1085,6 +1085,11 @@ hr {
     @media screen and (min-width: 768px) {
       .footer__meta {
         margin-top: 50px; } }
+    .footer__meta a:before {
+      content: '|';
+      margin: 0 5px; }
+    .footer__meta a:first-of-type:before {
+      display: none; }
   .footer h1 {
     margin-top: 0;
     margin-bottom: 10px;

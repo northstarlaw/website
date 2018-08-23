@@ -29,6 +29,19 @@
     @include tablet {
       margin-top: 50px;
     }
+
+    a {
+      &:before {
+        content: '|';
+        margin: 0 5px;
+      }
+
+      &:first-of-type {
+        &:before {
+          display: none;
+        }
+      }
+    }
   }
 
   h1 {
