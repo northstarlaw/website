@@ -1551,3 +1551,21 @@ hr {
     background-color: #d7b377;
     color: #0d2333;
     border-color: #0d2333; }
+
+.cookie-notice {
+  background: #4a4a4a;
+  color: #e6e6e6; }
+  .cookie-notice-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    color: #e6e6e6;
+    background: none; }
+  .cookie-notice .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  .cookie-notice p {
+    margin: 0; }

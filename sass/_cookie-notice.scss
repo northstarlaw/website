@@ -1,0 +1,23 @@
+.cookie-notice {
+  background: $grey;
+  color: $light-grey;
+
+  &-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    color: $light-grey;
+    background: none;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  p {
+    margin: 0;
+  }
+}
