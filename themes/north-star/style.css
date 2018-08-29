@@ -1566,6 +1566,13 @@ hr {
 .cookie-notice {
   background: #4a4a4a;
   color: #e6e6e6; }
+  @media screen and (min-width: 768px) {
+    .cookie-notice {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5; } }
   .cookie-notice-close {
     -webkit-appearance: none;
     -moz-appearance: none;

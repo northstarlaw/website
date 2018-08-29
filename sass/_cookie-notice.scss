@@ -2,6 +2,14 @@
   background: $grey;
   color: $light-grey;
 
+  @include tablet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+
   &-close {
     -webkit-appearance: none;
     -moz-appearance: none;
