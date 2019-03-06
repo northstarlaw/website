@@ -4,7 +4,6 @@
   left: 0;
   width: 100vw;
   height: 100%;
-  z-index: 2;
   background: color("white");
   display: flex;
   align-items: center;
@@ -55,8 +54,17 @@
     animation-duration: .3s;
     opacity: 0;
     animation-fill-mode: forwards;
-    width: 250px;
+    width: 320px;
     margin: 0 auto;
+    font-family: $font-cormarant;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 23px;
+
+    .star-logo {
+      fill: #ffffff;
+      margin-bottom: 10px;
+    }
 
     img {
       max-width: 100%;
