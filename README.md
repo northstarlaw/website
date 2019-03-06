@@ -28,7 +28,9 @@ The project will be served at [http://localhost:8000/](http://localhost:8000/)
 
 ## To release
 
-A release is made when a release is created from `master` branch. Once all code set to release is in the `master` branch, create a release with the title being the version of number.
+A release is made when a tag is created from `master` branch. 
+Once all code set to be released is in the `master` branch, 
+create a tag with the version number.
 
 Once created, a deployment will begin via a githook made to the server. You may need to purge Cloudflare to see changes.
 

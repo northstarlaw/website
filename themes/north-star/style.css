@@ -593,10 +593,11 @@ address {
   font-style: normal; }
 
 a {
-  color: #d7b377;
+  color: #0d2333;
   text-decoration: underline;
   transition: color .3s ease; }
   a:hover, a:focus {
+    color: #d7b377;
     outline: none;
     text-decoration: none; }
 
@@ -1183,8 +1184,6 @@ hr {
   font-weight: 300; }
 
 .tabs__contact-link {
-  color: #d7b377;
-  text-decoration: underline;
   margin: 10px 0;
   display: inline-block; }
   .tabs__contact-link:hover, .tabs__contact-link:focus {
@@ -1422,10 +1421,7 @@ hr {
         left: 0;
         margin-right: 1rem; } }
   .team-member__link {
-    color: #0d2333;
     text-decoration: none; }
-    .team-member__link:hover, .team-member__link:focus {
-      color: #d7b377; }
     .team-member__link [class~="icon"] {
       float: left; }
   .team-member__contact-details {
@@ -1590,3 +1586,5 @@ hr {
     padding-bottom: 15px; }
   .cookie-notice p {
     margin: 0; }
+  .cookie-notice a {
+    color: #d7b377; }

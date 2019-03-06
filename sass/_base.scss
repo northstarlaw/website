@@ -73,11 +73,12 @@ address {
 }
 
 a {
-  color: color("gold");
+  color: color("blue");
   text-decoration: $link-decoration;
   transition: color .3s ease;
 
   @include hover-focus {
+    color: color("gold");
     outline: none;
     text-decoration: $link-hover-decoration;
   }

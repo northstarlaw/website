@@ -80,6 +80,7 @@ get_header(); ?>
                 <div class="col col-md-3">
                   <?php if (have_rows('key_contacts')) :?>
                     <h3 class="sr-only">Key Contacts</h3>
+                    <span class="dn-ns h2 text-center" aria-hidden="true">Key Contacts</span>
                     <?php while ( have_rows('key_contacts') ) : the_row();
                       $id = get_sub_field('person')->ID;
                     ?>
